@@ -62,6 +62,17 @@ To replace images, convert them to base64:
 2. Copy the base64 string
 3. Replace in HTML: `data:image/jpeg;base64,<BASE64_STRING>`
 
+## 🔄 Sync automatico in VS Code
+
+Aprendo la cartella in VS Code parte da solo il task **"Sync automatico con GitHub"**
+(`.vscode/tasks.json`). Ogni 20 secondi scarica le modifiche caricate dall'altro socio:
+i file si aggiornano nell'editor senza fare nulla.
+
+- La prima volta VS Code chiede il permesso per le attività automatiche: rispondi **Consenti**.
+- Non tocca mai i file che stai modificando: se arrivano cambi proprio su quelli, lo scrive nel terminale e aspetta il tuo commit.
+- Con l'estensione **Live Server** (consigliata da VS Code) il browser si ricarica da solo a ogni aggiornamento.
+- Per fermarlo: chiudi il terminale "Sync automatico con GitHub".
+
 ## 📤 Pushing Changes
 
 After editing:

@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Sync automatico con GitHub",
+            "type": "shell",
+            "windows": {
+                "command": "powershell",
+                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\auto-sync.ps1"]
+            },
+            "osx": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/.vscode/auto-sync.sh"]
+            },
+            "linux": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/.vscode/auto-sync.sh"]
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": { "reveal": "silent", "panel": "dedicated" },
+            "runOptions": { "runOn": "folderOpen" }
+        }
+    ]
+}
