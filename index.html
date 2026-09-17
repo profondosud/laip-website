@@ -362,7 +362,10 @@
 
         .hero-visual {
             position: relative;
-            height: 500px;
+            /* foto verticale 2:3 mostrata per intero, alta al massimo quanto lo schermo */
+            width: min(100%, calc((100vh - 180px) * 2 / 3));
+            aspect-ratio: 2 / 3;
+            justify-self: center;
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid rgba(0, 212, 255, 0.2);
