@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <title>LAIP - Siti Web Professionali con IA</title>
     <style>
         * {
@@ -934,9 +935,44 @@
         createBinaryLines();
 
         const trailer = document.getElementById('trailer');
-        setTimeout(() => {
+        let trailerSeen = false;
+        try { trailerSeen = sessionStorage.getItem('laip-trailer') === '1'; } catch (e) {}
+        if (trailerSeen) {
+            trailer.style.transition = 'none';
             trailer.classList.add('hidden');
-        }, 3000);
+        } else {
+            setTimeout(() => {
+                trailer.classList.add('hidden');
+            }, 3000);
+            try { sessionStorage.setItem('laip-trailer', '1'); } catch (e) {}
+        }
+
+        // Anteprima su GitHub Pages: quando arriva un nuovo commit su main la pagina
+        // si ricarica da sola, dopo il tempo che serve a Pages per ripubblicare.
+        if (location.hostname.endsWith('github.io')) {
+            const COMMITS_API = 'https://api.github.com/repos/profondosud/laip-website/commits/main';
+            const PAGES_DELAY = 75000;
+            let lastSha = null;
+
+            async function checkForUpdate() {
+                try {
+                    const res = await fetch(COMMITS_API, { cache: 'no-store', headers: { Accept: 'application/vnd.github.sha' } });
+                    if (!res.ok) return;
+                    const sha = (await res.text()).trim();
+                    if (lastSha && sha !== lastSha) {
+                        setTimeout(() => {
+                            const url = new URL(location.href);
+                            url.searchParams.set('v', Date.now());
+                            location.replace(url);
+                        }, PAGES_DELAY);
+                    }
+                    lastSha = sha;
+                } catch (e) {}
+            }
+
+            checkForUpdate();
+            setInterval(checkForUpdate, 90000);
+        }
 
         trailer.addEventListener('click', () => {
             trailer.classList.add('hidden');
