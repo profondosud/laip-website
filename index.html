@@ -146,14 +146,14 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: linear-gradient(to bottom, rgba(0, 212, 255, 0.4) 0%, rgba(4, 8, 18, 0) 100%);
+            background: rgba(4, 8, 18, 0.95);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             z-index: 2000;
             opacity: 1;
-            transition: opacity 1.5s ease-out 0.3s;
+            transition: opacity 1.2s ease-out 0.5s;
             pointer-events: none;
         }
 
@@ -195,8 +195,7 @@
         }
 
         .trailer-logo {
-            margin-bottom: 2rem;
-            animation: lightbulb-glow 2.5s ease-out;
+            animation: lightbulb-glow 1.5s ease-out;
             display: flex;
             justify-content: center;
         }
@@ -601,6 +600,9 @@
 
     <!-- Trailer -->
     <div class="trailer" id="trailer">
+        <div class="trailer-logo">
+            <img id='trailerLogo' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAggAAACoCAYAAACFfxakAAEAAElEQVR42uz9d7wkVZ3/jz/POVXV6aa5d3JkBhiGnBWQLEFQAcEBJAqYUNE1re4aZmbdXVdX3TWtcU1rBAMqJgQEQXIQBhiYnHO4qUNVnXPevz+qum/fmcHP7vdnQL3vx6MfN3Tfvt3VVee8wyvAWIzFWIzFWIzFWIzFWIzFWIzFWIzFWIzF/yvU2CEYiz/WuSUi2TdKydjhGIuxGIuxGIux+BsPEVFjyedYjMVYjMVYjMVYALBgwQIN6DxJMCIy/uGHHx7fljSMxViMxViMxViMxd9K3HjjjQYwAMYYROToz33uc5+77LLLnnn44YePa0sexmIsxmIsxmIsxoK/DQyLyjsEpRUrVlz0rne965Onn376rvHjx8tLXvKSJ0VEN5OHsRiLsRiLsRiLseCvFlvA/PnzDRBoralUKjz22GMvXbBgwb3HHXecdHZ2CuCnTZuW3nzzzW8VkYAxPMJYjMVYjMVYjMVfd3LQ9nPXD3/4w4uuueaaO4899lgpl8sCOK11UigU3EUXXbRERKaMdQ/GYizGYizGYiz+OkPlHQNEpCgi0ac+9alXXHTRRffMmTNHtNYCuGKx6IrFogRBYGfOnCmf+9znbgiCYNQYYizGYizGYizGYiz+OsIAhGGIiMz+6U9/+on58+c/O23aNOnp6ZFCoeAAFwSBGGOkWCxarbU/55xznhaRMhCMHcKxGIuxGIuxGAv+ehgJIqJERIvIgZ/97Gc/ecEFF2yeNWuWBEEgSikHOGOMnHjiidLX1yeAKKXSyZMny0c+8pEb2hOMsRiLsRiLsRiLsfgLDKXUHhoG69at2//d7373h08++eTNkyZNEqWUhGFoAdfZ2SkXXHCB3H777fLxj39cisWiFItFB/hTTjnlGRGZPpYcjMVYjMVYjMVY/OV3DGgmBo8//vj573nPe+484IADtk2YMEFKpZIAFvD77ruvvO9975OnnnpKRESefPJJKZfLYowRY0za29sr733ve9+ZayEopcagB2MxFmMxFmMxFvyFMRJGdQweffTRV15//fUtqmIYhgJYY4w/5JBD5MMf/rCsX79emjE0NCRHH320AFIqlZxSyr3oRS9aLSLjAT2mnDgWY/FXvYgoabv9pa6De38Pf7nvaSzG4v+vaDIS8guk/IMf/ODCa6+99oGjjz5aisWiGGOsMcZqrf1pp50mX/3qV2X79u0iIpKmqWzdulWstfK2t71NAOns7JRCoWB7enrkLW95y9tEJGomHmMxFs/HDeEv9NWr3Te0/8uN/8PjYM/b6Pue+zWyp4hafmt7vr17tai939pfx6j7/j8dw7bneq7X/3veA3sRiht5zgULRC9YIGPF0Vj8ZWkXLFiwQM+fP98sWLBA5+3/eV//+tffdPbZZz84b9486e7ubo4RbGdnp7ziFa+Qn/70p2KtFRGROI5laGhIdu7cKd57+f73vy9RFElOa3SAP+qoo1aJyOQFCxbosdHCH79y+2PpW/w1nPN5Eqz3clNtC3/773a/6f/D7bkeb/byffvzG8DMnz/ftH0G6v9xG4s/6LmyQI/c/rDXQa4gy5jd81g8bxfK3GbZAC4/YQ/8yle+csXtt9/+uvvuu6937dq1WGsdwIwZM8x5553HVVddxdFHH40xBuccjUYDay3WWpxzpGnKmWeeyTPPPEMURaRp6srlslmwYMF3Fy5ceGm1WtWAH/sE/s+fFc9RVQHz8x9vEkD2UuHs/jt5jmt9b7+X3e5Xu/2u+bM8x98/70JrRaVSQbwHhKHhWphvys2vjbZz1JDRcdvfYwJIV1eHeOfQum1vVzA4OKTzv2lu9r792HR2diQiglYapcBaiwkM' alt='LAIP Logo'>
+        </div>
     </div>
 
     <!-- Navbar -->
