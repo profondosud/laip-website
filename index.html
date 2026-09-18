@@ -164,6 +164,13 @@
             opacity: 0;
             pointer-events: none;
             z-index: -1;
+            animation: trailer-hide 0s linear 2.5s forwards;
+        }
+
+        @keyframes trailer-hide {
+            to {
+                display: none;
+            }
         }
 
         .trailer-content {
