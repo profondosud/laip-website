@@ -47,7 +47,7 @@
         main, nav, footer {
             position: relative;
             z-index: 1;
-            animation: site-fadein 1.8s ease-in 3.8s forwards;
+            animation: site-fadein 2.2s ease-in-out 3.8s forwards;
             opacity: 0;
         }
 
@@ -283,9 +283,11 @@
         @keyframes site-fadein {
             0% {
                 opacity: 0;
+                transform: scale(0.98);
             }
             100% {
                 opacity: 1;
+                transform: scale(1);
             }
         }
 
@@ -984,7 +986,7 @@
         const trailer = document.getElementById('trailer');
         setTimeout(() => {
             trailer.classList.add('hidden');
-        }, 5600);
+        }, 6000);
 
         trailer.addEventListener('click', () => {
             trailer.classList.add('hidden');
