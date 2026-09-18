@@ -44,7 +44,12 @@
             z-index: 0;
         }
 
-        main, nav, footer { position: relative; z-index: 1; }
+        main, nav, footer {
+            position: relative;
+            z-index: 1;
+            animation: site-fadein 1.2s ease-out 4.3s forwards;
+            opacity: 0;
+        }
 
         .binary-bg {
             position: fixed;
@@ -273,6 +278,15 @@
         @keyframes subtitle-fade {
             0% { opacity: 0; transform: translateY(10px); }
             100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes site-fadein {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         @keyframes logo-fadeout {
