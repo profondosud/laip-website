@@ -195,7 +195,7 @@
         }
 
         .trailer-logo {
-            animation: lightbulb-glow 1.5s ease-out forwards;
+            animation: lightbulb-glow 1.5s ease-out forwards, logo-fadeout 1.2s ease-out 4.3s forwards;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -273,6 +273,17 @@
         @keyframes subtitle-fade {
             0% { opacity: 0; transform: translateY(10px); }
             100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes logo-fadeout {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
         }
 
         @keyframes heartbeat-glow {
