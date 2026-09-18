@@ -47,7 +47,7 @@
         main, nav, footer {
             position: relative;
             z-index: 1;
-            animation: site-fadein 1.2s ease-out 4.3s forwards;
+            animation: site-fadein 2.5s ease-in-out 4.3s forwards;
             opacity: 0;
         }
 
@@ -984,7 +984,7 @@
         const trailer = document.getElementById('trailer');
         setTimeout(() => {
             trailer.classList.add('hidden');
-        }, 5500);
+        }, 6800);
 
         trailer.addEventListener('click', () => {
             trailer.classList.add('hidden');
