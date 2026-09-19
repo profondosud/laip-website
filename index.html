@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAIP - Siti Web Professionali con IA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,11 +23,17 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--dark);
             color: #e5e7eb;
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .tech-bg {
@@ -693,42 +700,66 @@
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
             margin-top: 3rem;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+            z-index: 0;
         }
 
         .step-card {
-            background: rgba(20, 24, 32, 0.5);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 8px;
+            background: rgba(20, 24, 32, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 12px;
             padding: 2rem;
             text-align: center;
             transition: all 0.3s;
+            position: relative;
+            z-index: 1;
         }
 
         .step-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.1);
-            transform: translateY(-5px);
+            background: rgba(20, 24, 32, 0.95);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15);
+            transform: translateY(-8px);
         }
 
         .step-number {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-bright) 100%);
             border-radius: 50%;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .step-card h3 {
-            color: var(--primary);
-            margin: 1rem 0;
+            color: var(--primary-bright);
+            margin: 0.5rem 0 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .step-card p {
+            color: #b8bcc6;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         /* Vantaggi */
@@ -759,12 +790,29 @@
         }
 
         .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.4);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
         }
 
         .benefit-card h3 {
-            color: var(--primary);
+            color: var(--primary-bright);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .benefit-card p {
+            color: #b8bcc6;
+            font-size: 0.95rem;
         }
 
         /* Pricing */
