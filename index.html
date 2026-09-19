@@ -1021,6 +1021,10 @@
 
         function createTechParticles() {
             const techBg = document.getElementById('techBg');
+            if (!techBg) {
+                console.error('techBg element not found');
+                return;
+            }
             const formulas = [
                 'λ = h/p', 'E = mc²', '∇ · E = ρ/ε₀', 'F = ma',
                 'a² + b² = c²', '∫ f(x)dx', 'lim x→∞', 'Σ n=1',
@@ -1040,7 +1044,11 @@
             }
         }
 
-        createTechParticles();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', createTechParticles);
+        } else {
+            createTechParticles();
+        }
 
         const trailer = document.getElementById('trailer');
         setTimeout(() => {
