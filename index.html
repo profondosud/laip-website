@@ -1666,9 +1666,14 @@
         }
 
         const trailer = document.getElementById('trailer');
+
+        // Mobile: 2 secondi, Desktop: 6.8 secondi
+        const isMobile = window.innerWidth < 768;
+        const delay = isMobile ? 2000 : 6800;
+
         setTimeout(() => {
             trailer.classList.add('hidden');
-        }, 6800);
+        }, delay);
 
         trailer.addEventListener('click', () => {
             trailer.classList.add('hidden');
