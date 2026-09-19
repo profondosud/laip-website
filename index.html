@@ -775,6 +775,17 @@
             margin-top: 3rem;
         }
 
+        @media (min-width: 1200px) {
+            .benefits-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .benefits-grid > :nth-child(5),
+            .benefits-grid > :nth-child(6) {
+                grid-column: 2 / 4;
+            }
+        }
+
         .benefit-card {
             background: rgba(20, 24, 32, 0.5);
             border: 1px solid rgba(0, 212, 255, 0.15);
