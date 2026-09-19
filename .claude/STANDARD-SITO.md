@@ -34,7 +34,7 @@ Ordine consigliato: GitHub → progetto locale → Vercel → email → (video s
 
 **Autenticazione (importante, una volta sola per il PC):**
 Il push da VS Code NON richiede token nei file. L'autenticazione la gestisce **Git Credential Manager** col login browser. Se un `git push` fallisce con *"Password authentication is not supported"*:
-- Controlla l'URL del remote: `git remote -v`. Se contiene un token (`x-access-token:...@github.com` o `<userid>@github.com`), ripuliscilo:
+- Controlla l'URL del remote: `git remote -v`. Se contiene un token (`x-accesstps://profondosud.github.io/laip-website/-token:...@github.com` o `<userid>@github.com`), ripuliscilo:
   `git remote set-url origin https://github.com/mbtt-teamhero/sito_<nome>.git`
 - Forza il login pulito: `git credential-manager github login` → "Sign in with your browser".
 - Se persiste, rimuovi le voci GitHub vecchie da *Gestione credenziali di Windows* e riprova.
