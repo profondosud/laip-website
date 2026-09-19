@@ -718,7 +718,7 @@
                 top: 0 !important;
                 z-index: 10000 !important;
                 position: fixed !important;
-                transition: opacity 0.5s ease-out 1.5s !important;
+                transition: opacity 0.3s ease-out 1.2s !important;
             }
 
             .trailer-content {
@@ -1667,9 +1667,9 @@
 
         const trailer = document.getElementById('trailer');
 
-        // Mobile: 2 secondi, Desktop: 6.8 secondi
+        // Mobile: 1.5 secondi, Desktop: 6.8 secondi
         const isMobile = window.innerWidth < 768;
-        const delay = isMobile ? 2000 : 6800;
+        const delay = isMobile ? 1500 : 6800;
 
         setTimeout(() => {
             trailer.classList.add('hidden');
