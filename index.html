@@ -685,6 +685,263 @@
             .nav-links { display: none; }
             .logo-nav img { height: 50px; }
         }
+
+        /* Come Funziona */
+        #how-it-works {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: rgba(20, 24, 32, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .step-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-bright) 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h3 {
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        /* Vantaggi */
+        #benefits {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(20, 24, 32, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            color: var(--primary);
+        }
+
+        /* Pricing */
+        #pricing {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(20, 24, 32, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover:not(.featured) {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .pricing-badge.featured {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .price {
+            margin: 2rem 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .price-desc {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #d1d5db;
+        }
+
+        /* CTA Demo */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-large {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ */
+        #faq {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: rgba(20, 24, 32, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.1);
+        }
+
+        .faq-item h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Form */
+        #contact {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 212, 255, 0.03) 100%);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: rgba(20, 24, 32, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 6px;
+            padding: 1rem;
+            color: #e5e7eb;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #6b7280;
+        }
+
+        .form-note {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .section-subtitle {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -835,6 +1092,205 @@
                 </a>
             </div>
         </section>
+
+        <!-- Come Funziona -->
+        <section id="how-it-works">
+            <h2>Come Funziona</h2>
+            <p class="section-subtitle">Il processo è semplice: bozza, review, decisione.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Richiesta</h3>
+                    <p>Compila il form e raccontaci la tua visione. Descrivi il tuo settore, i tuoi servizi e cosa ti serve nel sito.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Creazione IA</h3>
+                    <p>In 24 ore ricevi una bozza completa: design, contenuti, funzionalità. Un sito pronto da esplorare.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Revisione</h3>
+                    <p>Hai 24 ore per testare il sito. Navigalo, controlla i contenuti, vedi se fa per te.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Decisione</h3>
+                    <p>Ti piace? Scegli di completarlo. Non ti conviene? Si cancella automaticamente. Nessun impegno.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Completamento</h3>
+                    <p>Se decidi di procedere, lo portiamo a produzione con dominio, hosting, manutenzione e supporto.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vantaggi -->
+        <section id="benefits">
+            <h2>Perché Sceglierci</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>24 Ore</h3>
+                    <p>Dalla richiesta al sito completo. Velocità che non troverai altrove.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Zero Rischio</h3>
+                    <p>Non ti piace? Si cancella. Nessun costo, nessun vincolo.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>IA Moderna</h3>
+                    <p>Technology cutting-edge che crea siti competitivi e professionali.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Responsive</h3>
+                    <p>Perfetto su mobile, tablet, desktop. I tuoi clienti sempre connessi.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔍</div>
+                    <h3>SEO Ready</h3>
+                    <p>Ottimizzato per i motori di ricerca fin dal primo giorno.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Conveniente</h3>
+                    <p>Qualità premium a prezzi accessibili. Niente markup inutile.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing">
+            <h2>Pricing Trasparente</h2>
+            <p class="section-subtitle">Niente sorprese. Tutto chiaro dal primo giorno.</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-badge">BOZZA</div>
+                    <h3>Demo 24h</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount">0</span>
+                    </div>
+                    <p class="price-desc">Gratis - Test senza impegno</p>
+                    <ul class="features-list">
+                        <li>✓ Sito completo in 24 ore</li>
+                        <li>✓ Design professionale</li>
+                        <li>✓ Contenuti IA generati</li>
+                        <li>✓ Responsive mobile</li>
+                        <li>✗ Dominio proprio</li>
+                        <li>✗ Hosting permanente</li>
+                    </ul>
+                    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Richiedi Demo</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge featured">COMPLETO</div>
+                    <h3>Sito Definitivo</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount">999</span>
+                        <span class="period">+</span>
+                    </div>
+                    <p class="price-desc">Una tantum + manutenzione opzionale</p>
+                    <ul class="features-list">
+                        <li>✓ Tutto della bozza</li>
+                        <li>✓ Dominio .it/.com</li>
+                        <li>✓ Hosting permanente</li>
+                        <li>✓ Email aziendale</li>
+                        <li>✓ SSL certificate</li>
+                        <li>✓ Supporto 30 giorni</li>
+                    </ul>
+                    <button class="btn-primary featured">Completa Adesso</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-badge">CUSTOM</div>
+                    <h3>Progetti Custom</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount">∞</span>
+                    </div>
+                    <p class="price-desc">Soluzioni su misura per esigenze complesse</p>
+                    <ul class="features-list">
+                        <li>✓ E-commerce</li>
+                        <li>✓ Integrazioni API</li>
+                        <li>✓ Membership system</li>
+                        <li>✓ Analitiche avanzate</li>
+                        <li>✓ Supporto 24/7</li>
+                        <li>✓ Manutenzione illimitata</li>
+                    </ul>
+                    <button class="btn-secondary">Contattaci</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Demo -->
+        <section id="cta-demo" class="cta-section">
+            <div class="cta-content">
+                <h2>Pronto a Vedere la Magia?</h2>
+                <p>Richiedi una demo gratuita. In 24 ore avrai il tuo sito personale. Niente di peggio che imaginare - vedi il risultato vero.</p>
+                <button class="btn-primary btn-large" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Richiedi Demo Gratis</button>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2>Domande Frequenti</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Posso richiedere modifiche durante le 24 ore?</h3>
+                    <p>La bozza è congelata. Ricevi il sito completo in 24 ore. Se decidi di procedere, tutte le modifiche le facciamo nella fase di completamento.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>E se non mi piace?</h3>
+                    <p>Si cancella automaticamente. Zero costi, zero impegno. Niente da perdere.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quanto costa il completamento?</h3>
+                    <p>€999 una tantum per il sito. Hosting e supporto hanno costi opzionali dipendenti dalle tue esigenze.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Posso usare il mio dominio?</h3>
+                    <p>Sì. O registriamo uno nuovo per te. La scelta è tua.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>E dopo il completamento, come funziona il supporto?</h3>
+                    <p>Supporto gratuito per 30 giorni. Dopo, puoi scegliere un piano di manutenzione mensile.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quali settori coprite?</h3>
+                    <p>Qualsiasi. E-commerce, agenzie, studi professionali, ristoranti, scuole - se esiste, sappiamo crearci un sito.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact">
+            <h2>Inizia Adesso</h2>
+            <p class="section-subtitle">Compila il form. In 24 ore avrai la tua bozza.</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Il tuo nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="La tua email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Il tuo numero (opzionale)">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Nome azienda/settore">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Dimmi come dovrebbe essere il tuo sito. Che servizi offri? Qual è il tono? Cosa ti piacerebbe che avesse?" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-large">Richiedi Demo Gratuita</button>
+                <p class="form-note">Riceverai la bozza via email tra 24 ore. Niente di meno.</p>
+            </form>
+        </section>
+
     </main>
 
     <footer>
