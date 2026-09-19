@@ -919,17 +919,21 @@
 
         /* CTA Demo */
         .cta-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+            margin: 4rem auto;
+        }
+
+        .cta-content {
             background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
             border: 2px solid rgba(0, 212, 255, 0.3);
             border-radius: 12px;
             padding: 4rem 2rem;
             text-align: center;
-            margin: 4rem auto;
             max-width: 900px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            width: 100%;
         }
 
         .cta-content h2 {
