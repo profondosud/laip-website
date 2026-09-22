@@ -6,7 +6,7 @@
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <!-- Version timestamp: 20260922-121615 -->
+    <!-- Version timestamp: 20260922-121800 -->
     <title>LAIP - Siti Web che Accelerano la Tua Crescita</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -614,6 +614,107 @@
             color: var(--primary);
             font-weight: 600;
             font-size: 0.9rem;
+        }
+
+        /* Carousel */
+        .carousel-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            justify-content: center;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .carousel-slide {
+            display: none;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .carousel-btn {
+            background: rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 212, 255, 0.4);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 212, 255, 0.4);
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 212, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 212, 255, 0.4);
+        }
+
+        .dot.active {
+            background: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        .dot:hover {
+            background: rgba(0, 212, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-wrapper {
+                gap: 1rem;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .carousel-container {
+                max-width: 100%;
+            }
         }
 
         /* Lingua */
@@ -1384,25 +1485,34 @@
 
         <section id="projects">
             <h2 data-i18n="projects.title">Progetti</h2>
-            <div class="features-grid">
-                <a class="feature-card project-card" href="https://ab39.it" target="_blank" rel="noopener">
-                    <span class="project-tag" data-i18n="projects.p1.tag">Sito personale · pilota</span>
-                    <h3>Andrea Bettin · Nº 39</h3>
-                    <p data-i18n="projects.p1.d">Sito in tre lingue con trailer d'ingresso, schede delle gare e pagine per gli sponsor.</p>
-                    <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
-                </a>
-                <a class="feature-card project-card" href="https://ruben-romero-71.vercel.app" target="_blank" rel="noopener">
-                    <span class="project-tag" data-i18n="projects.p2.tag">Sito personale · pilota Moto2</span>
-                    <h3>Rubén Romero #71</h3>
-                    <p data-i18n="projects.p2.d">Carriera, calendario della stagione con le gare aggiornate da sole, galleria e contatti.</p>
-                    <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
-                </a>
-                <a class="feature-card project-card" href="https://sito-ridinflow.vercel.app" target="_blank" rel="noopener">
-                    <span class="project-tag" data-i18n="projects.p3.tag">Scuola di guida in pista</span>
-                    <h3>RidinFlow</h3>
-                    <p data-i18n="projects.p3.d">Corsi, circuiti, domande frequenti e modulo di iscrizione con pulsante WhatsApp.</p>
-                    <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
-                </a>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-prev" id="prev-btn">❮</button>
+                <div class="carousel-container">
+                    <a class="carousel-slide feature-card project-card active" href="https://ab39.it" target="_blank" rel="noopener">
+                        <span class="project-tag" data-i18n="projects.p1.tag">Sito personale · pilota</span>
+                        <h3>Andrea Bettin · Nº 39</h3>
+                        <p data-i18n="projects.p1.d">Sito in tre lingue con trailer d'ingresso, schede delle gare e pagine per gli sponsor.</p>
+                        <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
+                    </a>
+                    <a class="carousel-slide feature-card project-card" href="https://ruben-romero-71.vercel.app" target="_blank" rel="noopener">
+                        <span class="project-tag" data-i18n="projects.p2.tag">Sito personale · pilota Moto2</span>
+                        <h3>Rubén Romero #71</h3>
+                        <p data-i18n="projects.p2.d">Carriera, calendario della stagione con le gare aggiornate da sole, galleria e contatti.</p>
+                        <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
+                    </a>
+                    <a class="carousel-slide feature-card project-card" href="https://sito-ridinflow.vercel.app" target="_blank" rel="noopener">
+                        <span class="project-tag" data-i18n="projects.p3.tag">Scuola di guida in pista</span>
+                        <h3>RidinFlow</h3>
+                        <p data-i18n="projects.p3.d">Corsi, circuiti, domande frequenti e modulo di iscrizione con pulsante WhatsApp.</p>
+                        <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
+                    </a>
+                </div>
+                <button class="carousel-btn carousel-next" id="next-btn">❯</button>
+            </div>
+            <div class="carousel-dots" id="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
             </div>
         </section>
 
@@ -1841,12 +1951,48 @@
                 alert(I18N[currentLang].alert);
             });
         });
+
+        // Carousel functionality
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+
+        function prevSlide() {
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                showSlide(index);
+            });
+        });
     </script>
 
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260922-121615';
+            const currentVersion = '20260922-121800';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
