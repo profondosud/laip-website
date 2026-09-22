@@ -6,7 +6,7 @@
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <!-- Version timestamp: 20260922-120715 -->
+    <!-- Version timestamp: 20260922-120850 -->
     <title>LAIP - Siti Web che Accelerano la Tua Crescita</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -641,11 +641,28 @@
         }
 
         /* Features Grid */
+        #features {
+            max-width: 1300px;
+            padding: 5rem 1.5rem;
+        }
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            #features {
+                padding: 3rem 1rem;
+            }
+
+            .features-grid {
+                gap: 1.5rem;
+                padding: 0;
+            }
         }
 
         @media (min-width: 1200px) {
@@ -1698,7 +1715,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260922-120715';
+            const currentVersion = '20260922-120850';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
