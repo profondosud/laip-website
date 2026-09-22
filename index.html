@@ -6,7 +6,7 @@
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <!-- Version timestamp: 20260922-115530 -->
+    <!-- Version timestamp: 20260922-120145 -->
     <title>LAIP - Siti Web che Accelerano la Tua Crescita</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1695,7 +1695,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260922-115530';
+            const currentVersion = '20260922-120145';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
@@ -1705,6 +1705,36 @@
             } else if (!storedVersion) {
                 localStorage.setItem(versionKey, currentVersion);
             }
+        })();
+    </script>
+
+    <script>
+        // Auto-reload intelligente: controlla aggiornamenti ogni 10 secondi
+        (function() {
+            const checkForUpdates = async () => {
+                try {
+                    const response = await fetch(window.location.href + '?t=' + Date.now());
+                    const text = await response.text();
+                    const match = text.match(/Version timestamp: ([\d-]+)/);
+                    const newVersion = match ? match[1] : null;
+
+                    const currentMatch = document.documentElement.innerHTML.match(/Version timestamp: ([\d-]+)/);
+                    const currentVersion = currentMatch ? currentMatch[1] : null;
+
+                    if (newVersion && currentVersion && newVersion !== currentVersion) {
+                        console.log('🚀 Aggiornamento rilevato! Ricarico pagina...');
+                        localStorage.removeItem('laip-version');
+                        window.location.reload(true);
+                    }
+                } catch (e) {
+                    // Silenzioso se il check fallisce
+                }
+            };
+
+            // Controlla ogni 10 secondi
+            setInterval(checkForUpdates, 10000);
+            // Primo check dopo 5 secondi
+            setTimeout(checkForUpdates, 5000);
         })();
     </script>
 </body>
