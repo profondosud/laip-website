@@ -6,7 +6,7 @@
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <!-- Version timestamp: 20260922-120930 -->
+    <!-- Version timestamp: 20260922-121130 -->
     <title>LAIP - Siti Web che Accelerano la Tua Crescita</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1168,6 +1168,131 @@
             text-align: center;
             letter-spacing: 0.3px;
         }
+
+        /* Demo Modal */
+        .demo-modal {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 360px;
+            max-height: 80vh;
+            background: rgba(4, 8, 18, 0.95);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+            padding: 2rem;
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+            animation: slideIn 0.3s ease-out;
+            overflow-y: auto;
+        }
+
+        .demo-modal.active {
+            display: flex;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px) translateX(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .demo-modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .demo-modal-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: none;
+            border: none;
+            color: #9ca3af;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .demo-modal-close:hover {
+            color: var(--primary);
+        }
+
+        .demo-modal h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .demo-modal-subtitle {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .demo-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .demo-form .form-group {
+            margin: 0;
+        }
+
+        .demo-form input {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(30, 40, 60, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 6px;
+            color: var(--white);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .demo-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+            background: rgba(30, 40, 60, 0.8);
+        }
+
+        .demo-form input::placeholder {
+            color: #6b7280;
+        }
+
+        .btn-submit {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+            width: 100%;
+        }
+
+        @media (max-width: 480px) {
+            .demo-modal {
+                width: calc(100% - 20px);
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-height: 90vh;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1208,7 +1333,7 @@
                 <h1 data-i18n="hero.title">Siti web strategici e innovativi per conquistare il tuo mercato</h1>
                 <p class="hero-subtitle" data-i18n="hero.text">« Creiamo siti web professionali che trasformano la visione della tua azienda in una strategia digitale concreta, generando visibilità e risultati misurabili sul tuo mercato. »</p>
                 <div class="hero-buttons">
-                    <button class="btn-primary" data-i18n="hero.cta1">Richiedi Consulenza</button>
+                    <button class="btn-primary" id="hero-cta" data-i18n="hero.cta1">Richiedi Demo Gratuita</button>
                 </div>
             </div>
         </section>
@@ -1473,6 +1598,30 @@
             </form>
         </section>
 
+        <!-- Demo Modal in bottom-right -->
+        <div id="demo-modal" class="demo-modal">
+            <div class="demo-modal-content">
+                <button class="demo-modal-close" id="close-demo">&times;</button>
+                <h3>Richiedi Demo Gratuita</h3>
+                <p class="demo-modal-subtitle">Compila il form. In 24 ore avrai la tua bozza.</p>
+                <form class="demo-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Il tuo nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="La tua email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Il tuo numero (opzionale)">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nome azienda/settore" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-submit">Richiedi</button>
+                </form>
+            </div>
+        </div>
+
     </main>
 
     <footer>
@@ -1509,7 +1658,7 @@
                 "hero.title": "Siti Web che Accelerano la Tua Crescita",
                 "hero.title": "Siti web strategici e innovativi per conquistare il tuo mercato",
                 "hero.text": "« Creiamo siti web professionali che trasformano la visione della tua azienda in una strategia digitale concreta, generando visibilità e risultati misurabili sul tuo mercato. »",
-                "hero.cta1": "Richiedi consulenza",
+                "hero.cta1": "Richiedi demo gratuita",
                 "hero.cta2": "Scopri i progetti",
                 "about.title": "Chi siamo",
                 "about.intro": "LAIP nasce da Andrea Bettin e Marco Paonessa, due piloti di moto che portano nel web lo stesso metodo della pista. Creiamo siti web professionali per aziende e professionisti, e usiamo l'intelligenza artificiale per lavorare più veloci senza perdere la cura del dettaglio.",
@@ -1558,7 +1707,7 @@
                 "nav.cta": "Descubre más",
                 "hero.title": "Webs estratégicas e innovadoras para conquistar tu mercado",
                 "hero.text": "« Creamos webs profesionales que transforman la visión de tu negocio en una estrategia digital tangible, generando visibilidad y resultados medibles en tu mercado. »",
-                "hero.cta1": "Pide una consulta",
+                "hero.cta1": "Solicita demo gratuita",
                 "hero.cta2": "Ver proyectos",
                 "about.title": "Quiénes somos",
                 "about.intro": "LAIP nace de Andrea Bettin y Marco Paonessa, dos pilotos de moto que llevan a la web el mismo método que usan en la pista. Creamos webs profesionales para empresas y profesionales, y usamos la inteligencia artificial para trabajar más rápido sin perder el cuidado del detalle.",
@@ -1710,7 +1859,44 @@
             });
         });
 
-        document.querySelectorAll('.btn-primary, .cta-btn').forEach(btn => {
+        // Demo modal functionality
+        const demoModal = document.getElementById('demo-modal');
+        const heroCta = document.getElementById('hero-cta');
+        const closeDemo = document.getElementById('close-demo');
+
+        if (heroCta) {
+            heroCta.addEventListener('click', (e) => {
+                e.preventDefault();
+                demoModal.classList.add('active');
+            });
+        }
+
+        if (closeDemo) {
+            closeDemo.addEventListener('click', () => {
+                demoModal.classList.remove('active');
+            });
+        }
+
+        // Close modal when clicking outside
+        demoModal.addEventListener('click', (e) => {
+            if (e.target === demoModal) {
+                demoModal.classList.remove('active');
+            }
+        });
+
+        // Handle form submission
+        const demoForm = document.querySelector('.demo-form');
+        if (demoForm) {
+            demoForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert(I18N[currentLang].alert);
+                demoModal.classList.remove('active');
+                demoForm.reset();
+            });
+        }
+
+        // Other CTAs
+        document.querySelectorAll('.btn-primary:not(#hero-cta), .cta-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 alert(I18N[currentLang].alert);
             });
@@ -1720,7 +1906,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260922-120930';
+            const currentVersion = '20260922-121130';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
