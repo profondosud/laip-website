@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <!-- Version timestamp: 20260922-115530 -->
     <title>LAIP - Siti Web che Accelerano la Tua Crescita</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -434,6 +438,18 @@
             color: #9ca3af;
             margin-bottom: 2rem;
             line-height: 1.8;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: #d1d5db;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-buttons {
@@ -1164,7 +1180,8 @@
         <!-- Hero -->
         <section class="hero">
             <div class="hero-content">
-                <h1 data-i18n="hero.text">Creiamo siti web professionali che trasformano la visione della tua azienda in una strategia digitale concreta, generando visibilità e risultati misurabili sul tuo mercato.</h1>
+                <h1 data-i18n="hero.title">Siti web strategici e innovativi per conquistare il tuo mercato</h1>
+                <p class="hero-subtitle" data-i18n="hero.text">Creiamo siti web professionali che trasformano la visione della tua azienda in una strategia digitale concreta, generando visibilità e risultati misurabili sul tuo mercato.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary" data-i18n="hero.cta1">Richiedi Consulenza</button>
                 </div>
@@ -1465,6 +1482,7 @@
                 "nav.projects": "Progetti",
                 "nav.cta": "Scopri di più",
                 "hero.title": "Siti Web che Accelerano la Tua Crescita",
+                "hero.title": "Siti web strategici e innovativi per conquistare il tuo mercato",
                 "hero.text": "Creiamo siti web professionali che trasformano la visione della tua azienda in una strategia digitale concreta, generando visibilità e risultati misurabili sul tuo mercato.",
                 "hero.cta1": "Richiedi consulenza",
                 "hero.cta2": "Scopri i progetti",
@@ -1513,8 +1531,8 @@
                 "nav.contact": "Contacto",
                 "nav.projects": "Proyectos",
                 "nav.cta": "Descubre más",
-                "hero.title": "Webs Profesionales con Inteligencia Artificial",
-                "hero.text": "Velocidad, precisión e innovación. Dos pilotos profesionales han unido el ADN del motorsport a la tecnología IA para crear webs que rinden.",
+                "hero.title": "Webs estratégicas e innovadoras para conquistar tu mercado",
+                "hero.text": "Creamos webs profesionales que transforman la visión de tu negocio en una estrategia digital tangible, generando visibilidad y resultados medibles en tu mercado.",
                 "hero.cta1": "Pide una consulta",
                 "hero.cta2": "Ver proyectos",
                 "about.title": "Quiénes somos",
@@ -1672,6 +1690,22 @@
                 alert(I18N[currentLang].alert);
             });
         });
+    </script>
+
+    <script>
+        // Cache busting: forza il reload se il file è più recente
+        (function() {
+            const currentVersion = '20260922-115530';
+            const versionKey = 'laip-version';
+            const storedVersion = localStorage.getItem(versionKey);
+
+            if (storedVersion && storedVersion !== currentVersion) {
+                localStorage.setItem(versionKey, currentVersion);
+                location.reload(true);
+            } else if (!storedVersion) {
+                localStorage.setItem(versionKey, currentVersion);
+            }
+        })();
     </script>
 </body>
 </html>
