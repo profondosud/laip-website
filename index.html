@@ -6,7 +6,7 @@
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <!-- Version timestamp: 20260922-121800 -->
+    <!-- Version timestamp: 20260922-122000 -->
     <title>LAIP - Siti Web che Accelerano la Tua Crescita</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -673,6 +673,59 @@
             background: rgba(0, 212, 255, 0.4);
             border-color: var(--primary);
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .project-preview {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .preview-mock {
+            width: 85%;
+            height: 90%;
+            background: rgba(20, 24, 32, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .preview-header {
+            height: 15%;
+            background: rgba(0, 212, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+        }
+
+        .preview-content {
+            flex: 1;
+            background: rgba(10, 15, 25, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 12px;
+        }
+
+        .preview-content::before {
+            content: '';
+            height: 10px;
+            background: rgba(0, 212, 255, 0.3);
+            border-radius: 2px;
+        }
+
+        .preview-content::after {
+            content: '';
+            height: 20px;
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.2), transparent);
+            border-radius: 2px;
         }
 
         .carousel-dots {
@@ -1506,6 +1559,42 @@
                         <p data-i18n="projects.p3.d">Corsi, circuiti, domande frequenti e modulo di iscrizione con pulsante WhatsApp.</p>
                         <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
                     </a>
+                    <a class="carousel-slide feature-card project-card" href="https://www.adattivia.it" target="_blank" rel="noopener">
+                        <div class="project-preview">
+                            <div class="preview-mock">
+                                <div class="preview-header"></div>
+                                <div class="preview-content"></div>
+                            </div>
+                        </div>
+                        <span class="project-tag">Agenzia di comunicazione</span>
+                        <h3>Adattivia</h3>
+                        <p>Sito professionale con portfolio, servizi e sezione blog integrata.</p>
+                        <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
+                    </a>
+                    <a class="carousel-slide feature-card project-card" href="https://www.teamhero.it" target="_blank" rel="noopener">
+                        <div class="project-preview">
+                            <div class="preview-mock">
+                                <div class="preview-header"></div>
+                                <div class="preview-content"></div>
+                            </div>
+                        </div>
+                        <span class="project-tag">Team di innovazione</span>
+                        <h3>TeamHero</h3>
+                        <p>Piattaforma collaborativa con dashboard, team management e analytics.</p>
+                        <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
+                    </a>
+                    <a class="carousel-slide feature-card project-card" href="https://es.ayuniko.shop" target="_blank" rel="noopener">
+                        <div class="project-preview">
+                            <div class="preview-mock">
+                                <div class="preview-header"></div>
+                                <div class="preview-content"></div>
+                            </div>
+                        </div>
+                        <span class="project-tag">E-commerce</span>
+                        <h3>Ayuniko Shop</h3>
+                        <p>Negozio online con catalogo prodotti, carrello e sistema di pagamento.</p>
+                        <span class="project-link" data-i18n="projects.visit">Visita il sito →</span>
+                    </a>
                 </div>
                 <button class="carousel-btn carousel-next" id="next-btn">❯</button>
             </div>
@@ -1513,6 +1602,9 @@
                 <span class="dot active" data-index="0"></span>
                 <span class="dot" data-index="1"></span>
                 <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+                <span class="dot" data-index="5"></span>
             </div>
         </section>
 
@@ -1992,7 +2084,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260922-121800';
+            const currentVersion = '20260922-122000';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
