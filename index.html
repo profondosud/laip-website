@@ -656,35 +656,48 @@
             position: relative;
             width: 100%;
             max-width: 800px;
-            height: 500px;
             perspective: 1200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .carousel-inner {
             position: relative;
             width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         .carousel-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            transform-style: preserve-3d;
-            opacity: 1;
-            transition: opacity 0.3s ease-in-out;
+            animation: rotateOut 0.5s ease-in-out forwards;
+            opacity: 0;
+            transform: rotateY(90deg);
+            pointer-events: none;
         }
 
-        .carousel-slide.hidden {
-            opacity: 0;
-            pointer-events: none;
+        .carousel-slide.active {
+            animation: rotateIn 0.5s ease-in-out forwards;
+            opacity: 1;
+            transform: rotateY(0deg);
+            pointer-events: auto;
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotateY(-90deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+
+        @keyframes rotateOut {
+            from {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+            to {
+                opacity: 0;
+                transform: rotateY(90deg);
+            }
         }
 
         .carousel-btn {
@@ -2095,50 +2108,30 @@
             });
         });
 
-        // 3D Carousel functionality
-        const carouselContainer = document.querySelector('.carousel-container');
+        // 3D Carousel with rotation animation
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-
         let currentSlide = 0;
-        const totalSlides = slides.length;
-        const anglePerSlide = 360 / totalSlides;
 
-        // Create carousel inner wrapper for 3D rotation
-        const carouselInner = document.createElement('div');
-        carouselInner.className = 'carousel-inner';
-        carouselContainer.appendChild(carouselInner);
-
-        // Move all slides to the new wrapper
-        slides.forEach((slide, index) => {
-            carouselInner.appendChild(slide);
-            // Position slides in a circle
-            const angle = index * anglePerSlide;
-            const radius = 400;
-            slide.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
-        });
-
-        function rotateCarousel(index) {
-            const rotation = -index * anglePerSlide;
-            carouselInner.style.transform = `rotateY(${rotation}deg)`;
-
-            // Update dots
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-            dots[index].classList.add('active');
 
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
             currentSlide = index;
         }
 
         function nextSlide() {
-            const next = (currentSlide + 1) % totalSlides;
-            rotateCarousel(next);
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
         }
 
         function prevSlide() {
-            const prev = (currentSlide - 1 + totalSlides) % totalSlides;
-            rotateCarousel(prev);
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
         }
 
         if (prevBtn) prevBtn.addEventListener('click', prevSlide);
@@ -2147,7 +2140,7 @@
         dots.forEach(dot => {
             dot.addEventListener('click', () => {
                 const index = parseInt(dot.getAttribute('data-index'));
-                rotateCarousel(index);
+                showSlide(index);
             });
         });
     </script>
@@ -2155,7 +2148,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260923-133000';
+            const currentVersion = '20260923-133100';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
