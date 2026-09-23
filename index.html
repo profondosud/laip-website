@@ -673,7 +673,7 @@
             display: none;
             width: 100%;
             opacity: 0;
-            transition: opacity 0.6s ease-in-out;
+            transition: opacity 0.5s linear;
         }
 
         .carousel-slide.active {
@@ -2178,7 +2178,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260923-134500';
+            const currentVersion = '20260923-134600';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
