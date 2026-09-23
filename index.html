@@ -784,6 +784,47 @@
             background: rgba(0, 212, 255, 0.6);
         }
 
+        /* Carousel project preview backgrounds */
+        .carousel-slide:nth-child(1) .preview-mock {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><text x="50%" y="50%" font-size="48" font-weight="900" fill="%23ff8c00" text-anchor="middle" dominant-baseline="middle" font-family="Poppins" letter-spacing="2">UA</text></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 120px auto;
+        }
+
+        .carousel-slide:nth-child(2) .preview-mock {
+            background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"><text x="50%" y="35%" font-size="48" fill="%23ffeb3b" text-anchor="middle" dominant-baseline="middle">⚡</text><text x="50%" y="70%" font-size="24" font-weight="700" fill="white" text-anchor="middle" dominant-baseline="middle" font-family="Poppins">Hero</text></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100px 80px;
+        }
+
+        .carousel-slide:nth-child(3) .preview-mock {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><text x="50%" y="50%" font-size="56" font-weight="900" fill="%231e40af" text-anchor="middle" dominant-baseline="middle" font-family="Poppins">A39</text></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 140px auto;
+        }
+
+        .carousel-slide:nth-child(4) .preview-mock {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><text x="50%" y="50%" font-size="56" font-weight="900" fill="%231e40af" text-anchor="middle" dominant-baseline="middle" font-family="Poppins">AB39</text></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 140px auto;
+        }
+
+        .carousel-slide:nth-child(5) .preview-mock {
+            background: linear-gradient(135deg, rgba(200, 30, 30, 0.1) 0%, rgba(200, 30, 30, 0.05) 100%);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"><text x="50%" y="40%" font-size="32" font-weight="900" fill="%23c91e1e" text-anchor="middle" dominant-baseline="middle" font-family="Poppins">Ridin</text><text x="50%" y="70%" font-size="28" font-weight="900" fill="%23c91e1e" text-anchor="middle" dominant-baseline="middle" font-family="Poppins">Flow</text></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 120px 90px;
+        }
+
         @media (max-width: 768px) {
             .carousel-wrapper {
                 gap: 1rem;
@@ -2137,7 +2178,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260923-134400';
+            const currentVersion = '20260923-134500';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
