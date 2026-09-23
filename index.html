@@ -798,6 +798,58 @@
             background: rgba(0, 212, 255, 0.6);
         }
 
+        /* Carousel slide logos - only in preview area */
+        .carousel-slide:nth-of-type(1) .preview-mock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 15, 25, 0.5);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ff8c00;
+            text-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.2em;
+        }
+
+        .carousel-slide:nth-of-type(1) .preview-mock::before {
+            content: 'UA';
+        }
+
+        .carousel-slide:nth-of-type(1) .preview-header,
+        .carousel-slide:nth-of-type(1) .preview-content {
+            display: none;
+        }
+
+        .carousel-slide:nth-of-type(2) .preview-mock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+            gap: 0.5rem;
+        }
+
+        .carousel-slide:nth-of-type(2) .preview-header,
+        .carousel-slide:nth-of-type(2) .preview-content {
+            display: none;
+        }
+
+        .carousel-slide:nth-of-type(2) .preview-mock::before {
+            content: '⚡';
+            font-size: 3rem;
+            color: #ffeb3b;
+            text-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
+        }
+
+        .carousel-slide:nth-of-type(2) .preview-mock::after {
+            content: 'Hero';
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
         @media (max-width: 768px) {
             .carousel-wrapper {
                 gap: 1rem;
@@ -2173,7 +2225,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260923-133800';
+            const currentVersion = '20260923-134300';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
