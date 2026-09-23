@@ -6,7 +6,7 @@
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <!-- Version timestamp: 20260923-122530 -->
+    <!-- Version timestamp: 20260923-122600 -->
     <title>LAIP - Siti Web che Accelerano la Tua Crescita</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -494,6 +494,33 @@
         .btn-secondary:hover {
             background: rgba(0, 212, 255, 0.15);
             transform: translateY(-3px);
+        }
+
+        .guarantee-banner {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .btn-guarantee {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 1.2rem 3rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .btn-guarantee:hover {
+            background: rgba(0, 212, 255, 0.15);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
 
         .hero-visual {
@@ -1720,6 +1747,9 @@
                     <button class="btn-secondary">Contattaci</button>
                 </div>
             </div>
+            <div class="guarantee-banner">
+                <button class="btn-guarantee">Soddisfatti o rimborsati</button>
+            </div>
         </section>
 
         <!-- CTA Demo -->
@@ -2098,7 +2128,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260923-122530';
+            const currentVersion = '20260923-122600';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
