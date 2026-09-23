@@ -659,40 +659,26 @@
         .carousel-container {
             position: relative;
             width: 100%;
-            max-width: 1000px;
-            perspective: 1200px;
-            height: 620px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            max-width: 900px;
+            height: auto;
             margin: 0 auto;
         }
 
         .carousel-inner {
-            position: absolute;
+            position: relative;
             width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         .carousel-slide {
-            position: absolute;
-            width: 800px;
-            height: 500px;
-            left: 50%;
-            top: 50%;
-            margin-left: -400px;
-            margin-top: -250px;
-            transform-style: preserve-3d;
+            display: none;
+            width: 100%;
             opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.6s ease-in-out;
         }
 
         .carousel-slide.active {
+            display: block;
             opacity: 1;
-            pointer-events: auto;
         }
 
         .carousel-btn {
@@ -796,58 +782,6 @@
 
         .dot:hover {
             background: rgba(0, 212, 255, 0.6);
-        }
-
-        /* Carousel slide logos - only in preview area */
-        .carousel-slide:nth-of-type(1) .preview-mock {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(10, 15, 25, 0.5);
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #ff8c00;
-            text-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: 0.2em;
-        }
-
-        .carousel-slide:nth-of-type(1) .preview-mock::before {
-            content: 'UA';
-        }
-
-        .carousel-slide:nth-of-type(1) .preview-header,
-        .carousel-slide:nth-of-type(1) .preview-content {
-            display: none;
-        }
-
-        .carousel-slide:nth-of-type(2) .preview-mock {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
-            gap: 0.5rem;
-        }
-
-        .carousel-slide:nth-of-type(2) .preview-header,
-        .carousel-slide:nth-of-type(2) .preview-content {
-            display: none;
-        }
-
-        .carousel-slide:nth-of-type(2) .preview-mock::before {
-            content: '⚡';
-            font-size: 3rem;
-            color: #ffeb3b;
-            text-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
-        }
-
-        .carousel-slide:nth-of-type(2) .preview-mock::after {
-            content: 'Hero';
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            font-family: 'Poppins', sans-serif;
         }
 
         @media (max-width: 768px) {
@@ -2157,8 +2091,7 @@
             });
         });
 
-        // 3D Circular Carousel
-        const carouselContainer = document.querySelector('.carousel-container');
+        // Simple Carousel
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
         const prevBtn = document.getElementById('prev-btn');
@@ -2166,46 +2099,26 @@
 
         let currentSlide = 0;
         const totalSlides = slides.length;
-        const anglePerSlide = 360 / totalSlides;
-        const radius = 550;
 
-        // Create carousel inner if needed
-        let carouselInner = document.querySelector('.carousel-inner');
-        if (!carouselInner) {
-            carouselInner = document.createElement('div');
-            carouselInner.className = 'carousel-inner';
-            carouselContainer.appendChild(carouselInner);
-            slides.forEach(slide => carouselInner.appendChild(slide));
-        }
-
-        // Position slides in circle
-        slides.forEach((slide, index) => {
-            const angle = index * anglePerSlide;
-            slide.style.transform = `rotateY(${angle}deg) translateZ(${radius}px) rotateY(-${angle}deg)`;
-        });
-
-        function rotateCarousel(index) {
-            const rotation = -index * anglePerSlide;
-            carouselInner.style.transform = `rotateY(${rotation}deg)`;
-
+        function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.classList.toggle('active', i === index);
             });
 
             dots.forEach(dot => dot.classList.remove('active'));
-            dots[index].classList.add('active');
+            if (dots[index]) dots[index].classList.add('active');
 
             currentSlide = index;
         }
 
         function nextSlide() {
             const next = (currentSlide + 1) % totalSlides;
-            rotateCarousel(next);
+            showSlide(next);
         }
 
         function prevSlide() {
             const prev = (currentSlide - 1 + totalSlides) % totalSlides;
-            rotateCarousel(prev);
+            showSlide(prev);
         }
 
         if (prevBtn) prevBtn.addEventListener('click', prevSlide);
@@ -2214,18 +2127,17 @@
         dots.forEach(dot => {
             dot.addEventListener('click', () => {
                 const index = parseInt(dot.getAttribute('data-index'));
-                rotateCarousel(index);
+                showSlide(index);
             });
         });
 
-        // Initialize first slide as active
-        rotateCarousel(0);
+        showSlide(0);
     </script>
 
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260923-134300';
+            const currentVersion = '20260923-134400';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
