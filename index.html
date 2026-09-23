@@ -650,6 +650,10 @@
             gap: 2rem;
             margin-top: 3rem;
             justify-content: center;
+            width: 100%;
+            flex-wrap: nowrap;
+            padding: 0 1rem;
+            box-sizing: border-box;
         }
 
         .carousel-container {
@@ -657,6 +661,9 @@
             width: 100%;
             max-width: 800px;
             perspective: 1200px;
+            min-height: 450px;
+            display: flex;
+            align-items: stretch;
         }
 
         .carousel-inner {
@@ -710,10 +717,12 @@
             font-size: 1.5rem;
             cursor: pointer;
             transition: all 0.3s;
-            display: flex;
+            display: flex !important;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            z-index: 10;
+            position: relative;
         }
 
         .carousel-btn:hover {
@@ -2148,7 +2157,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260923-133100';
+            const currentVersion = '20260923-133200';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
