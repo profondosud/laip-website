@@ -684,15 +684,15 @@
             top: 50%;
             margin-left: -400px;
             margin-top: -250px;
-            transform-style: preserve-3d;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.6s ease-in-out;
         }
 
         .carousel-slide.active {
             opacity: 1;
             pointer-events: auto;
+            z-index: 1;
         }
 
         .carousel-btn {
@@ -2105,8 +2105,7 @@
             });
         });
 
-        // 3D Circular Carousel
-        const carouselContainer = document.querySelector('.carousel-container');
+        // Smooth Carousel with Fade
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
         const prevBtn = document.getElementById('prev-btn');
@@ -2114,28 +2113,8 @@
 
         let currentSlide = 0;
         const totalSlides = slides.length;
-        const anglePerSlide = 360 / totalSlides;
-        const radius = 550;
 
-        // Create carousel inner if needed
-        let carouselInner = document.querySelector('.carousel-inner');
-        if (!carouselInner) {
-            carouselInner = document.createElement('div');
-            carouselInner.className = 'carousel-inner';
-            carouselContainer.appendChild(carouselInner);
-            slides.forEach(slide => carouselInner.appendChild(slide));
-        }
-
-        // Position slides in circle
-        slides.forEach((slide, index) => {
-            const angle = index * anglePerSlide;
-            slide.style.transform = `rotateY(${angle}deg) translateZ(${radius}px) rotateY(-${angle}deg)`;
-        });
-
-        function rotateCarousel(index) {
-            const rotation = -index * anglePerSlide;
-            carouselInner.style.transform = `rotateY(${rotation}deg)`;
-
+        function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.classList.toggle('active', i === index);
             });
@@ -2148,12 +2127,12 @@
 
         function nextSlide() {
             const next = (currentSlide + 1) % totalSlides;
-            rotateCarousel(next);
+            showSlide(next);
         }
 
         function prevSlide() {
             const prev = (currentSlide - 1 + totalSlides) % totalSlides;
-            rotateCarousel(prev);
+            showSlide(prev);
         }
 
         if (prevBtn) prevBtn.addEventListener('click', prevSlide);
@@ -2162,18 +2141,18 @@
         dots.forEach(dot => {
             dot.addEventListener('click', () => {
                 const index = parseInt(dot.getAttribute('data-index'));
-                rotateCarousel(index);
+                showSlide(index);
             });
         });
 
-        // Initialize first slide as active
-        rotateCarousel(0);
+        // Initialize first slide
+        showSlide(0);
     </script>
 
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260923-133800';
+            const currentVersion = '20260923-133900';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
