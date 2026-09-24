@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAIP - I Nostri Partner e la Nostra Storia</title>
+    <meta name="description" content="Scopri come LAIP nasce dalla collaborazione con Adattivia e Marco Bettin, e come i nostri fondatori sono cresciuti sotto la loro guida.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --primary-light: #00f0ff;
+            --dark: #040812;
+            --gray-light: #e5e7eb;
+            --gray-dark: #6b7280;
+        }
+
+        body {
+            background: var(--dark);
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(4, 8, 18, 0.95);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .back-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 212, 255, 0.2);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.03) 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .narrative-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 3rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: rgba(20, 24, 32, 0.5);
+            border-left: 4px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            border-left-color: var(--primary);
+            background: rgba(20, 24, 32, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .timeline-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 240, 255, 0.2));
+            border: 2px solid rgba(0, 212, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .timeline-content h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Partner Cards */
+        .partners-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .partner-card {
+            background: rgba(20, 24, 32, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .partner-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .partner-header {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 240, 255, 0.05) 100%);
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .partner-logo {
+            max-width: 180px;
+            height: auto;
+            max-height: 90px;
+            object-fit: contain;
+            filter: brightness(1.1);
+            transition: transform 0.3s;
+        }
+
+        .partner-card:hover .partner-logo {
+            transform: scale(1.05);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 240, 255, 0.2));
+            border: 2px solid rgba(0, 212, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .partner-content {
+            padding: 2rem;
+        }
+
+        .partner-content h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .partner-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .partner-bio {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .partner-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .partner-link:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        /* Quote */
+        .quote-section {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border-left: 4px solid var(--primary);
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .quote {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .quote-author {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            padding: 2rem;
+            background: rgba(20, 24, 32, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            border-color: var(--primary);
+            background: rgba(20, 24, 32, 0.7);
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h4 {
+            color: #fff;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .value-card p {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .cta-section p {
+            font-size: 1.05rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(4, 8, 18, 0.95);
+            border-top: 1px solid rgba(0, 212, 255, 0.15);
+            padding: 2rem;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .timeline-item {
+                gap: 1.5rem;
+            }
+
+            .quote {
+                font-size: 1.2rem;
+            }
+
+            .cta-section {
+                padding: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">LAIP</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features" class="back-btn">← Torna alla Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>La Nostra Storia</h1>
+            <p class="hero-subtitle">Come LAIP nasce dalla passione, dall'esperienza e dalla visione di Adattivia</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Inizio della storia -->
+        <section class="section">
+            <h2 class="section-title">Come Tutto È Iniziato</h2>
+            <p class="narrative-text">
+                Nel cuore della trasformazione digitale italiana, due visionari - <span class="highlight">Andrea Bettin</span> e <span class="highlight">Marco Paonessa</span> - hanno capito che il vero problema non è la tecnologia. È la <span class="highlight">velocità</span> con cui le aziende riescono a sfruttare l'IA.
+            </p>
+            <p class="narrative-text">
+                Entrambi hanno avuto il privilegio di crescere professionalmente sotto la mentorship di <span class="highlight">Marco Bettin</span> e in collaborazione con il team di <span class="highlight">Adattivia</span>. In quelle esperienze hanno visto come le imprese migliori combattono: non con strumenti fancy, ma con <span class="highlight">metodo</span>, <span class="highlight">governance</span> e <span class="highlight">velocità di esecuzione</span>.
+            </p>
+            <p class="narrative-text">
+                È nato così il progetto LAIP: un sistema per dare a ogni azienda, indipendentemente dalla dimensione, la possibilità di avere un sito web professionale costruito con intelligenza artificiale. Non è solo codice. È il distillato di 25 anni di esperienza nel capire come le aziende *davvero* lavorano.
+            </p>
+        </section>
+
+        <!-- Timeline della Partnership -->
+        <section class="section">
+            <h2 class="section-title">Il Nostro Percorso</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>La Formazione</h3>
+                        <p>Andrea e Marco hanno iniziato il loro percorso lavorando con Adattivia e Marco Bettin. Qui hanno imparato il valore della governance dell'IA, della metodologia rigorosa e dell'attenzione al dettaglio nella trasformazione digitale.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>L'Intuizione</h3>
+                        <p>Osservando le limitazioni dei processi tradizionali, hanno colto l'opportunità: cosa accadrebbe se potessimo democratizzare i siti web professionali? Se la burocrazia web si potesse abbattere in 72 ore?</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>La Partnership Strategica</h3>
+                        <p>È stata naturale rimanere collegati ad Adattivia e a Marco Bettin, non come dipendenti, ma come partner. LAIP porta il loro approccio metodico alla creazione di siti web - veloce, ma sempre professionale.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Il Presente</h3>
+                        <p>Oggi, LAIP è il risultato di questa sinergia: l'agilità di una startup, la profondità di esperienza di Adattivia, e la visione strategica di Marco Bettin. Per ogni cliente, garantiamo affidabilità e qualità.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote -->
+        <section class="quote-section">
+            <p class="quote">
+                "La vera innovazione non è la tecnologia. È il metodo con cui la applichi."
+            </p>
+            <p class="quote-author">— Marco Bettin, Adattivia</p>
+        </section>
+
+        <!-- I Co-Fondatori -->
+        <section class="section">
+            <h2 class="section-title">I Co-Fondatori di LAIP</h2>
+            <div class="partners-showcase">
+                <!-- Andrea Bettin -->
+                <div class="partner-card">
+                    <div class="partner-header">
+                        <div class="avatar">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="partner-content">
+                        <h3>Andrea Bettin</h3>
+                        <p class="partner-role">Co-Fondatore & CTO</p>
+                        <p class="partner-bio">
+                            Specializzato in architettura web e implementazione di soluzioni IA. Ha sviluppato la tecnologia dietro LAIP mentre lavorava con il team Adattivia, imparando come costruire sistemi che scale con il metodo, non il caos.
+                        </p>
+                        <a href="#" class="partner-link">Scopri di più</a>
+                    </div>
+                </div>
+
+                <!-- Marco Paonessa -->
+                <div class="partner-card">
+                    <div class="partner-header">
+                        <div class="avatar">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="partner-content">
+                        <h3>Marco Paonessa</h3>
+                        <p class="partner-role">Co-Fondatore & Strategy</p>
+                        <p class="partner-bio">
+                            Guida la strategia e la visione di LAIP. La sua esperienza con Adattivia nel capire le vere esigenze delle PMI lo ha insegnato che la soluzione perfetta non esiste - esiste solo la soluzione giusta al momento giusto.
+                        </p>
+                        <a href="#" class="partner-link">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adattivia e Marco Bettin -->
+        <section class="section">
+            <h2 class="section-title">I Nostri Mentor e Partner</h2>
+            <div class="partners-showcase">
+                <!-- Marco Bettin -->
+                <div class="partner-card">
+                    <div class="partner-header">
+                        <div class="avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <div class="partner-content">
+                        <h3>Marco Bettin</h3>
+                        <p class="partner-role">Mentor & Partner Strategico</p>
+                        <p class="partner-bio">
+                            Con oltre 25 anni di esperienza nella trasformazione digitale e nella governance dell'IA, Marco è la guida che ha insegnato ad Andrea e Marco non solo *come* costruire tecnologia, ma *perché* costruirla in un certo modo.
+                        </p>
+                        <a href="https://www.linkedin.com/in/ingmarcobettin/" target="_blank" class="partner-link">LinkedIn</a>
+                    </div>
+                </div>
+
+                <!-- Adattivia -->
+                <div class="partner-card">
+                    <div class="partner-header">
+                        <img src="images/adattivia.png" alt="Adattivia" class="partner-logo">
+                    </div>
+                    <div class="partner-content">
+                        <h3>Adattivia</h3>
+                        <p class="partner-role">Partner Strategico & Mentorship</p>
+                        <p class="partner-bio">
+                            Adattivia ha insegnato il significato di metodologia rigida, governance responsabile dell'IA, e l'importanza della conformità normativa. LAIP porta questi principi nel mondo della creazione web veloce.
+                        </p>
+                        <a href="https://www.adattivia.it" target="_blank" class="partner-link">www.adattivia.it</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- I Valori Condivisi -->
+        <section class="section">
+            <h2 class="section-title">I Valori che Guidano LAIP</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h4>Velocità Consapevole</h4>
+                    <p>72 ore non è un compromesso. È il risultato di anni di perfezionamento metodico. Veloce, ma sempre professionale.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Governance Responsabile</h4>
+                    <p>L'IA è potente solo se governata bene. Seguiamo i principi di Adattivia: trasparenza, controllo, conformità.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Persone al Centro</h4>
+                    <p>La tecnologia serve le persone, non il contrario. Ogni decisione parte dalla domanda: "Questo aiuta davvero il nostro cliente?"</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovazione Consapevole</h4>
+                    <p>Non usiamo la tecnologia solo perché è trendy. La usiamo perché risolve veri problemi, misurabili e concreti.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Partnership Autentica</h4>
+                    <p>Crediamo nella collaborazione. Con Adattivia, con i nostri clienti, con il nostro team. Noi cresciamo insieme.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Affidabilità Garantita</h4>
+                    <p>Le promesse si mantengono. 72 ore significa 72 ore. La qualità non è negoziabile. Punto.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Pronto a Far Parte di Questa Visione?</h2>
+            <p>
+                Scopri come LAIP può trasformare il tuo business con la stessa metodologia, velocità e affidabilità che caratterizza Adattivia.
+            </p>
+            <a href="index.html#pricing" class="cta-btn">Richiedi Demo Gratuita</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 LAIP - Siti Professionali con IA</p>
+        <p>Costruito con metodo, visione e la guida di Adattivia</p>
+    </footer>
+</body>
+</html>

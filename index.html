@@ -1436,200 +1436,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* Partners Section */
-        #partners {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 212, 255, 0.03) 100%);
-            border-top: 1px solid rgba(0, 212, 255, 0.15);
-        }
-
-        .partners-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        #partners h2 {
-            font-size: 2.5rem;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .partner-card {
-            background: rgba(20, 24, 32, 0.6);
-            border: 2px solid rgba(0, 212, 255, 0.15);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .partner-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .partner-header {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 240, 255, 0.05) 100%);
-            padding: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 140px;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
-        }
-
-        .partner-logo {
-            max-width: 200px;
-            height: auto;
-            max-height: 80px;
-            object-fit: contain;
-            filter: brightness(1.1);
-            transition: transform 0.3s ease;
-        }
-
-        .partner-card:hover .partner-logo {
-            transform: scale(1.05);
-        }
-
-        .marco-avatar {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 240, 255, 0.2));
-            border: 2px solid rgba(0, 212, 255, 0.4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--primary);
-        }
-
-        .partner-content {
-            padding: 2rem;
-        }
-
-        .partner-content h3 {
-            font-size: 1.4rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .partner-tag {
-            font-size: 0.85rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .partner-description {
-            color: #d1d5db;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .partner-features {
-            list-style: none;
-            margin: 1.5rem 0;
-            padding: 0;
-        }
-
-        .partner-features li {
-            color: #bfdbfe;
-            font-size: 0.9rem;
-            padding: 0.5rem 0;
-            line-height: 1.5;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.08);
-        }
-
-        .partner-features li:last-child {
-            border-bottom: none;
-        }
-
-        .partner-features strong {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .partner-link {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.75rem 1.5rem;
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-        }
-
-        .partner-link:hover {
-            background: rgba(0, 212, 255, 0.2);
-            border-color: var(--primary);
-            transform: translateX(3px);
-        }
-
-        .partnership-note {
-            background: rgba(0, 212, 255, 0.08);
-            border-left: 4px solid var(--primary);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 3rem;
-            text-align: center;
-        }
-
-        .partnership-note p {
-            color: #d1d5db;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        .partnership-note strong {
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .partners-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .partner-card {
-                margin: 0;
-            }
-
-            #partners h2 {
-                font-size: 1.8rem;
-            }
-
-            .partner-content h3 {
-                font-size: 1.1rem;
-            }
-
-            .partnership-note {
-                padding: 1.5rem;
-            }
-
-            .partnership-note p {
-                font-size: 0.9rem;
-            }
-        }
 
         /* Demo Modal */
         .demo-modal {
@@ -1778,7 +1584,7 @@
                 <a href="about.html" data-i18n="nav.about">Chi siamo</a>
                 <a href="#features" data-i18n="nav.services">Servizi</a>
                 <a href="#projects" data-i18n="nav.projects">Progetti</a>
-                <a href="#partners" data-i18n="nav.partners">Partners</a>
+                <a href="partners.html" data-i18n="nav.partners">Partners</a>
                 <button class="cta-btn" data-i18n="nav.cta">Scopri di Più</button>
             </div>
             <div class="lang-switch" role="group" aria-label="Lingua / Idioma">
@@ -2051,10 +1857,8 @@
             </div>
         </section>
 
-        <!-- Partners Section -->
-        <section id="partners" class="partners-section">
-            <div class="partners-container">
-                <h2>I Nostri Partner</h2>
+        <!-- CTA Demo -->
+        <!-- FAQ -->
                 <p class="section-subtitle">Collaboriamo con i migliori per garantire qualità e affidabilità</p>
 
                 <div class="partners-grid">
@@ -2493,7 +2297,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260924-101500';
+            const currentVersion = '20260924-101600';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
