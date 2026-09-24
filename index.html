@@ -789,7 +789,13 @@
             background-image: url('images/adattivia-screenshot.png');
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover;
+            background-size: 100% 100%;
+            background-color: transparent;
+        }
+
+        .carousel-slide:nth-child(1) .preview-header,
+        .carousel-slide:nth-child(1) .preview-content {
+            display: none !important;
         }
 
         .carousel-slide:nth-child(2) .preview-mock {
@@ -2174,7 +2180,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260924-100000';
+            const currentVersion = '20260924-100100';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
