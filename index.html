@@ -1436,6 +1436,201 @@
             letter-spacing: 0.3px;
         }
 
+        /* Partners Section */
+        #partners {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 212, 255, 0.03) 100%);
+            border-top: 1px solid rgba(0, 212, 255, 0.15);
+        }
+
+        .partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        #partners h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .partner-card {
+            background: rgba(20, 24, 32, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .partner-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .partner-header {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 240, 255, 0.05) 100%);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .partner-logo {
+            max-width: 200px;
+            height: auto;
+            max-height: 80px;
+            object-fit: contain;
+            filter: brightness(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover .partner-logo {
+            transform: scale(1.05);
+        }
+
+        .marco-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 240, 255, 0.2));
+            border: 2px solid rgba(0, 212, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .partner-content {
+            padding: 2rem;
+        }
+
+        .partner-content h3 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .partner-tag {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .partner-description {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .partner-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+        }
+
+        .partner-features li {
+            color: #bfdbfe;
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+        }
+
+        .partner-features li:last-child {
+            border-bottom: none;
+        }
+
+        .partner-features strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .partner-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .partner-link:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: var(--primary);
+            transform: translateX(3px);
+        }
+
+        .partnership-note {
+            background: rgba(0, 212, 255, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .partnership-note p {
+            color: #d1d5db;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .partnership-note strong {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .partners-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .partner-card {
+                margin: 0;
+            }
+
+            #partners h2 {
+                font-size: 1.8rem;
+            }
+
+            .partner-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .partnership-note {
+                padding: 1.5rem;
+            }
+
+            .partnership-note p {
+                font-size: 0.9rem;
+            }
+        }
+
         /* Demo Modal */
         .demo-modal {
             position: fixed;
@@ -1856,6 +2051,66 @@
             </div>
         </section>
 
+        <!-- Partners Section -->
+        <section id="partners" class="partners-section">
+            <div class="partners-container">
+                <h2>I Nostri Partner</h2>
+                <p class="section-subtitle">Collaboriamo con i migliori per garantire qualità e affidabilità</p>
+
+                <div class="partners-grid">
+                    <!-- Adattivia Card -->
+                    <div class="partner-card">
+                        <div class="partner-header">
+                            <img src="images/adattivia.png" alt="Adattivia Logo" class="partner-logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3>Adattivia</h3>
+                            <p class="partner-tag">25 anni di esperienza nell'innovazione digitale</p>
+                            <p class="partner-description">
+                                Adattivia guida piccole e medie imprese attraverso l'adozione consapevole dell'IA, in conformità con il quadro normativo europeo. Con una metodologia provata e un approccio centrato sull'organizzazione, trasformano i processi aziendali attraverso l'automazione intelligente.
+                            </p>
+                            <ul class="partner-features">
+                                <li><strong>✓ Adozione IA strategica</strong> per PMI</li>
+                                <li><strong>✓ Conformità AI Act</strong> Europeo</li>
+                                <li><strong>✓ Change Management</strong> organizzativo</li>
+                                <li><strong>✓ Governance</strong> dell'IA responsabile</li>
+                            </ul>
+                            <a href="https://www.adattivia.it" target="_blank" class="partner-link">Scopri Adattivia →</a>
+                        </div>
+                    </div>
+
+                    <!-- Marco Bettin Card -->
+                    <div class="partner-card">
+                        <div class="partner-header">
+                            <div class="marco-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <div class="partner-content">
+                            <h3>Marco Bettin</h3>
+                            <p class="partner-tag">Founder & Innovation Manager</p>
+                            <p class="partner-description">
+                                Con oltre 25 anni di esperienza nel scaling di PMI e nella gestione del cambiamento organizzativo, Marco porta una prospettiva unica sulla trasformazione digitale responsabile. La sua expertise spazia dalla strategia tecnologica alla governance normativa, garantendo implementazioni di IA che creano valore reale mantenendo il controllo e la conformità.
+                            </p>
+                            <ul class="partner-features">
+                                <li><strong>✓ 25+ anni</strong> di esperienza</li>
+                                <li><strong>✓ Expert</strong> in Digital Transformation</li>
+                                <li><strong>✓ Laurea</strong> Università di Trento</li>
+                                <li><strong>✓ 500+ connessioni</strong> professionali</li>
+                            </ul>
+                            <a href="https://www.linkedin.com/in/ingmarcobettin/" target="_blank" class="partner-link">LinkedIn →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partnership-note">
+                    <p>
+                        <strong>Perché questa partnership?</strong> Adattivia e Marco Bettin portano una profondità di expertise nella trasformazione digitale che garantisce i nostri clienti ricevono non solo un sito bellissimo, ma una soluzione web che integra intelligentemente l'IA per risultati concreti e misurabili.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Demo -->
         <!-- FAQ -->
         <section id="faq">
@@ -2238,7 +2493,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260924-101400';
+            const currentVersion = '20260924-101500';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
