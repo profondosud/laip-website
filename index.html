@@ -862,10 +862,22 @@
         }
 
         .carousel-slide:nth-child(5) .preview-mock {
-            background-image: url('images/ridinflow.png');
+            background-image: url('images/ridinflow-screenshot.png');
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: center top;
             background-size: cover;
+            background-color: transparent;
+            width: 100% !important;
+            height: 100% !important;
+            padding: 0 !important;
+            border: none !important;
+            border-radius: 0 !important;
+            margin: 0 !important;
+        }
+
+        .carousel-slide:nth-child(5) .preview-header,
+        .carousel-slide:nth-child(5) .preview-content {
+            display: none !important;
         }
 
         @media (max-width: 768px) {
@@ -2222,7 +2234,7 @@
     <script>
         // Cache busting: forza il reload se il file è più recente
         (function() {
-            const currentVersion = '20260924-100700';
+            const currentVersion = '20260924-100800';
             const versionKey = 'laip-version';
             const storedVersion = localStorage.getItem(versionKey);
 
