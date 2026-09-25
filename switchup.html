@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWITCH UP - Siti Web Professionali per il Motorsport</title>
+    <meta name="description" content="Siti web professionali per team, piloti e scuole di guida. Attira sponsor con una piattaforma che parla il linguaggio del business.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #CCFF00;
+            --dark: #000000;
+            --light: #FFFFFF;
+            --gray: #1a1a1a;
+            --gray-light: #d1d5db;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--light);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.98);
+            border-bottom: 2px solid var(--primary);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(204, 255, 0, 0.3);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray-light);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-tagline {
+            font-size: 0.95rem;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(204, 255, 0, 0.4);
+        }
+
+        /* Section */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .section-desc {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            border-top: 2px solid var(--primary);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .problem-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--primary);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .problem-card:hover {
+            background: rgba(204, 255, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .problem-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .problem-card p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: var(--dark);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .solution-card {
+            background: rgba(204, 255, 0, 0.05);
+            border: 2px solid var(--primary);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .solution-card:hover {
+            background: rgba(204, 255, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(204, 255, 0, 0.2);
+        }
+
+        .solution-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .solution-card h3 {
+            color: var(--light);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .solution-card p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Process */
+        .process-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .step-number {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .process-step h3 {
+            color: var(--light);
+            margin-bottom: 0.8rem;
+        }
+
+        .process-step p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        /* Pricing */
+        .pricing-section {
+            background: var(--dark);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--primary);
+            padding: 2.5rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(204, 255, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            color: var(--light);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .price-desc {
+            color: var(--gray-light);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .features-list li {
+            color: var(--gray-light);
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(204, 255, 0, 0.1);
+        }
+
+        .features-list li:before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .btn-secondary {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(204, 255, 0, 0.3);
+        }
+
+        /* Guaranty */
+        .guarantee {
+            background: rgba(204, 255, 0, 0.1);
+            border: 2px solid var(--primary);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .guarantee h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .guarantee p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        /* Examples */
+        .examples-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .carousel-btn {
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            font-weight: 700;
+        }
+
+        .carousel-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .carousel-slide {
+            flex: 1;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .slide-title {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-desc {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.98);
+            border-top: 2px solid var(--primary);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--gray-light);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .carousel-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">SWITCH UP</a>
+            <nav class="nav-links">
+                <a href="#problem">Problema</a>
+                <a href="#solution">Soluzione</a>
+                <a href="#pricing">Prezzi</a>
+                <a href="#about">Chi Siamo</a>
+                <button class="cta-btn">Demo Gratuita</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tagline">SPORT · VISIBILITY · GROWTH</p>
+            <h1>Il Tuo Team Merita <span>Sponsor Veri</span></h1>
+            <p class="hero-subtitle">Un sito web professionale è la tua arma segreta per attirare sponsor e far crescere il tuo brand nel motorsport.</p>
+            <a href="#" class="cta-primary">Richiedi Demo Gratuita</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem-section">
+        <h2>Il Problema Reale</h2>
+        <p class="section-desc">Nel motorsport, la visibilità è tutto. Ma come fanno i team e i piloti a farsi notare dai brand che contano?</p>
+
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>❌ Nessuna Piattaforma Professionale</h3>
+                <p>Social media non bastano. Gli sponsor cercano serietà, struttura, un brand credibile. Dove lo trovano?</p>
+            </div>
+            <div class="problem-card">
+                <h3>❌ Invisibili Online</h3>
+                <p>Se non sei su Google, non esisti. I potenziali sponsor cercano team prima di contattarli. Tu dove sei?</p>
+            </div>
+            <div class="problem-card">
+                <h3>❌ Perdi Tempo e Soldi</h3>
+                <p>Siti web generici, costosi, lenti da fare. Nel frattempo, i tuoi competitor si prendono gli sponsor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="solution-section">
+        <h2>La Nostra Soluzione</h2>
+        <p class="section-desc">SWITCH UP: il sito web che trasforma i team invisibili in brand certi per gli sponsor.</p>
+
+        <div class="solution-grid">
+            <div class="solution-card">
+                <div class="solution-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Veloce (72 ore)</h3>
+                <p>Non aspetti mesi. Il tuo sito è pronto in 3 giorni. Mentre i competitor parlano, tu sei già online.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon"><i class="fas fa-trophy"></i></div>
+                <h3>Professionale</h3>
+                <p>Design che impressiona. Struttura che convince. Il tuo team merita un sito al livello del tuo talento.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Che Converte</h3>
+                <p>Non è bello e basta. È fatto per attirare sponsor. Ogni sezione, ogni elemento, pensato per la conversione.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Affidabile</h3>
+                <p>Supportato da Adattivia e Marco Bettin. La stessa metodologia che guida le aziende di successo.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon"><i class="fas fa-cog"></i></div>
+                <h3>Facile da Gestire</h3>
+                <p>Non hai bisogno di essere un developer. Lo gestisci tu, aggiorni i risultati, i dati dei piloti, tutto.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon"><i class="fas fa-dollar-sign"></i></div>
+                <h3>ROI Immediato</h3>
+                <p>Investi una volta. Gli sponsor che attiri ti pagano indietro il costo in settimane, non mesi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <h2>Come Funziona</h2>
+        <p class="section-desc">Tre step semplici, dalla idea al sito online che attrae sponsor.</p>
+
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Racconti</h3>
+                <p>Una call di 30 minuti. Ci dici chi siete, cosa fate, quali sponsor cercate.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Costruiamo</h3>
+                <p>Usiamo l'IA per creare il tuo sito. 72 ore. Pronto per i tuoi sponsor.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Vai Online</h3>
+                <p>Il sito è tuo. Lo gestisci, lo aggiorni, lo monetizzi con sponsor che arrivano da soli.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <h2>Prezzi Trasparenti</h2>
+        <p class="section-desc">Niente sorprese. Paghi una sola volta. Il sito è tuo per sempre.</p>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Demo</h3>
+                <div class="price">Gratuito</div>
+                <p class="price-desc">72 ore</p>
+                <ul class="features-list">
+                    <li>Bozza del sito</li>
+                    <li>Design completo</li>
+                    <li>3 giorni di test</li>
+                    <li>Si cancella dopo</li>
+                </ul>
+                <button class="btn-secondary">Richiedi Demo</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Professional</h3>
+                <div class="price">€990</div>
+                <p class="price-desc">Una sola volta</p>
+                <ul class="features-list">
+                    <li>Sito completo</li>
+                    <li>Sezioni sponsor</li>
+                    <li>Statistiche piloti</li>
+                    <li>Contatti sponsor</li>
+                    <li>30 giorni supporto</li>
+                </ul>
+                <button class="btn-secondary">Acquista Ora</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Performance</h3>
+                <div class="price">€1.990</div>
+                <p class="price-desc">Una sola volta</p>
+                <ul class="features-list">
+                    <li>Tutto Professional +</li>
+                    <li>SEO ottimizzato</li>
+                    <li>Analytics avanzato</li>
+                    <li>Dominio custom</li>
+                    <li>Supporto 90 giorni</li>
+                </ul>
+                <button class="btn-secondary">Acquista Ora</button>
+            </div>
+        </div>
+
+        <div class="guarantee">
+            <h3>Soddisfatti o Rimborsati</h3>
+            <p>Se il sito non ti piace, ne parliamo. Nessun rischio. La tua fiducia è tutto.</p>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="examples-section">
+        <h2>Nel Motorsport, Funziona</h2>
+        <p class="section-desc">Vedi come altri team hanno già iniziato a fare la differenza online.</p>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-btn">‹</button>
+            <div class="carousel-slide">
+                <div class="slide-title">Team Formula 4</div>
+                <p class="slide-desc">"Il sito ha cambiato tutto. Sponsor che cercavamo da mesi, ora è come se ci trovassero loro."</p>
+            </div>
+            <button class="carousel-btn">›</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="solution-section">
+        <h2>Chi Siamo Noi</h2>
+        <p class="section-desc">SWITCH UP è stato creato da chi conosce bene il motorsport e sa cosa cercano gli sponsor.</p>
+
+        <div class="solution-grid" style="margin-top: 2rem;">
+            <div class="solution-card">
+                <h3>Supporto Adattivia</h3>
+                <p>Collaboriamo con Adattivia, esperti di trasformazione digitale da 25 anni. La stessa metodologia che usiamo, i brand leader la richiedono.</p>
+            </div>
+            <div class="solution-card">
+                <h3>Metodo Provato</h3>
+                <p>Non è improvvisazione. È il risultato di anni di esperienza nel capire come i business (e i team) crescono veramente.</p>
+            </div>
+            <div class="solution-card">
+                <h3>Tu Non Sei Solo</h3>
+                <p>Supporto via email, call, feedback. Se il sito non funziona, lo aggiustiamo gratis. I tuoi sponsor sono anche nostri sponsor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>SWITCH UP</strong> - Siti Professionali per il Motorsport</p>
+        <p>Your sport. Your brand. Your next level.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contatti</a>
+            <a href="https://www.adattivia.it" target="_blank">Partner Adattivia</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.8rem;">© 2026 SWITCH UP. Costruito con metodo e visione.</p>
+    </footer>
+</body>
+</html>
