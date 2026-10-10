@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Servizi | SWITCH UP</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" href="images/logo-switchup.png">
+<style>
+:root{
+  --p:#ADDE00;--p-lo:rgba(173,222,0,.08);--p-stroke:.022em;
+  --ink:#06060A;--ink2:#0D0D14;--snow:#F2EFF8;
+  --dim:#7A7888;--dim2:#B0AEBF;--line:rgba(255,255,255,.07);
+  color-scheme:dark;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--ink);scroll-behavior:smooth}
+body{background:var(--ink);color:var(--snow);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6}
+::selection{background:var(--p);color:#0a0a0a}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:1.2rem 2.5rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  transition:background .4s,backdrop-filter .4s,padding .3s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+nav.s{
+  background:rgba(6,6,10,.92);
+  backdrop-filter:blur(24px);
+  border-color:rgba(173,222,0,.14);
+  padding:.85rem 2.5rem;
+}
+.nav-logo{display:inline-flex;align-items:center;transition:opacity .2s}
+.nav-logo:hover{opacity:.75}
+.nav-logo img{height:152px;width:auto;display:block;transition:height .3s;image-rendering:crisp-edges}
+nav.s .nav-logo img{height:30px}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-links a{
+  font-size:.76rem;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--dim2);
+  position:relative;transition:color .25s;
+}
+.nav-links a::after{
+  content:'';position:absolute;left:0;bottom:-4px;
+  width:0;height:1px;background:var(--p);transition:width .3s;
+}
+.nav-links a:hover{color:var(--snow)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  padding:.6rem 1.4rem;background:var(--p);color:#0a0a0a;
+  border:none;border-radius:3px;cursor:pointer;
+  font-size:.73rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  box-shadow:0 4px 20px rgba(173,222,0,.2);
+  transition:box-shadow .25s,transform .2s;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(173,222,0,.4)}
+
+/* HERO */
+.hero{
+  min-height:50vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:8rem 2.5rem 4rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 50% 60% at 5% 50%,rgba(173,222,0,.07),transparent 65%);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:1;max-width:900px}
+.hero h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(2.4rem,6vw,5.5rem);
+  font-weight:900;line-height:.9;
+  text-transform:uppercase;letter-spacing:.01em;
+  margin-bottom:1.5rem;
+}
+.hero p{
+  font-size:1rem;color:var(--dim2);
+  max-width:700px;line-height:1.8;margin:0 auto;
+}
+
+/* SERVICE SECTION */
+.service-section{
+  padding:7rem 2.5rem;
+  border-top:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.service-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 40% at 50% 38%,rgba(173,222,0,.04),transparent 70%);
+  pointer-events:none;
+}
+.service-inner{max-width:1200px;margin:0 auto;position:relative}
+.service-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(2.5rem,5.5vw,4.8rem);
+  font-weight:900;line-height:1;
+  text-transform:uppercase;
+  margin-bottom:2rem;
+  max-width:800px;
+}
+.service-title em{
+  color:transparent;
+  -webkit-text-stroke:.022em var(--p);
+  font-style:italic;display:block;
+}
+.service-intro{
+  font-size:1.05rem;color:var(--dim2);
+  line-height:1.8;max-width:700px;
+  margin-bottom:4rem;
+  border-left:3px solid var(--p);
+  padding-left:1.5rem;
+}
+
+.service-center{
+  display:flex;align-items:center;justify-content:center;
+  margin:4rem 0;
+}
+.service-icon{
+  font-size:5rem;color:var(--p);
+  opacity:.85;
+}
+
+.service-points{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;
+  margin-top:4rem;
+}
+.point{
+  text-align:center;
+}
+.point-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:4rem;font-weight:900;
+  color:rgba(173,222,0,.15);
+  line-height:1;margin-bottom:1rem;
+}
+.point h4{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.1rem;font-weight:800;
+  text-transform:uppercase;
+  color:var(--snow);
+  margin-bottom:.8rem;
+  line-height:1.2;
+}
+.point p{
+  font-size:.9rem;color:var(--dim2);
+  line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+  padding:5rem 2.5rem 3rem;
+  border-top:1px solid var(--line);
+  background:#030306;
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:4rem;margin-bottom:4rem;
+}
+.f-brand-logo{display:inline-flex;margin-bottom:1.4rem}
+.f-brand-logo img{height:36px;width:auto;display:block}
+.f-brand p{font-size:.8rem;color:var(--dim);line-height:1.75;max-width:240px}
+.f-col h4{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-bottom:1.3rem;font-weight:600}
+.f-col a{display:block;font-size:.83rem;color:var(--dim2);margin-bottom:.65rem;transition:color .2s}
+.f-col a:hover{color:var(--p)}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;
+  padding-top:2rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.f-copy{font-size:.73rem;color:var(--dim)}
+
+@media(max-width:900px){
+  .service-points{grid-template-columns:1fr 1fr}
+  .footer-inner{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .service-points{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  nav{padding:0 1.2rem}
+  .nav-links a:not(.nav-cta){display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo-switchup.svg" alt="SWITCH UP">
+  </a>
+  <div class="nav-links">
+    <a href="index.html#why">Perché Noi</a>
+    <a href="index.html#projects">Progetti</a>
+    <a href="servizi.html" style="color:var(--p)">Servizi</a>
+    <a href="index.html#service">Pacchetti</a>
+    <button class="nav-cta" onclick="window.location.href='index.html#service'">Parliamone</button>
+  </div>
+</nav>
+
+<!-- UFFICIO STAMPA -->
+<section class="service-section">
+  <div class="service-inner">
+    <h2 class="service-title">Creiamo interesse intorno a te.<br><em>Siamo noi a creare la notizia</em></h2>
+    <p class="service-intro">Non è il tuo nome sui giornali che attira gli sponsor. È la storia dietro quel nome. Costruiamo narrativa credibile intorno a te: da semplice pilota a figura mediatica rilevante.</p>
+    <div class="service-center">
+      <i class="fas fa-newspaper service-icon"></i>
+    </div>
+    <div class="service-points">
+      <div class="point">
+        <div class="point-num">01</div>
+        <h4>Press Kit Professionale</h4>
+        <p>Dossier completo con foto, cv, statistiche. Pronto da mandare a media e sponsor.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">02</div>
+        <h4>Comunicati Stampa</h4>
+        <p>Annunci coordinati di vittorie, stage, partnership. Visibilità costante sui media.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">03</div>
+        <h4>Relazioni Media</h4>
+        <p>Contatti con giornalisti motorsport. Porte aperte con media e testate online.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">04</div>
+        <h4>Personal Brand</h4>
+        <p>Strategia di posizionamento. Diventi personaggio, non solo pilota.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESENTAZIONI SPONSOR -->
+<section class="service-section">
+  <div class="service-inner">
+    <h2 class="service-title">Creiamo la presentazione giusta<br><em>Per ogni sponsor</em></h2>
+    <p class="service-intro">Ogni sponsor è diverso. Chi cerca visibilità, chi experience, chi ROI. Noi creiamo presentazioni, brochure e materiali ad hoc: su misura alle sue esigenze, nel suo linguaggio, con i numeri che lo convincono.</p>
+    <div class="service-center">
+      <i class="fas fa-handshake service-icon"></i>
+    </div>
+    <div class="service-points">
+      <div class="point">
+        <div class="point-num">01</div>
+        <h4>Presentazioni Customizzate</h4>
+        <p>Deck professionale ad hoc per ogni sponsor. Numeri, dati, visione. Strutturata per convincere esattamente lui.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">02</div>
+        <h4>Brochure & Media Kit</h4>
+        <p>Materiali fisici e digitali: brochure, one-pager, media kit integrato. Strumenti che lasciano impressione.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">03</div>
+        <h4>Proposal Personalizzate</h4>
+        <p>Proposte di sponsorship studiate sulle esigenze specifiche. Non template: ogni proposta è custom.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">04</div>
+        <h4>Materiali di Supporto</h4>
+        <p>Follow-up design: infografiche, case studies, report. Tutto ciò che serve dopo la firma per mantenerlo felice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMUNICAZIONE VISIVA -->
+<section class="service-section" style="background:linear-gradient(180deg,var(--ink2) 0%,var(--ink) 100%)">
+  <div class="service-inner">
+    <h2 class="service-title">L'estetica è una scienza.<br><em>Ogni pixel racconta</em></h2>
+    <p class="service-intro">Non è bello solo perché piace. È bello perché funziona. Colori, layout, font: tutto comunica chi sei. Lo sponsor ti giudica prima di leggere una parola. La visiva vende.</p>
+    <div class="service-center">
+      <i class="fas fa-palette service-icon"></i>
+    </div>
+    <div class="service-points">
+      <div class="point">
+        <div class="point-num">01</div>
+        <h4>Brand Identity</h4>
+        <p>Logo, colori, font, guida stilistica. Coerente su sito, social, merchandise.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">02</div>
+        <h4>Design Grafico</h4>
+        <p>Poster, social card, infografiche, sponsor kit. Visuale professionista, non amatrice.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">03</div>
+        <h4>Video Motion</h4>
+        <p>Clip, intro, highlights. Contenuto motion per social che cattura attenzione in 3 secondi.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">04</div>
+        <h4>Photography Direction</h4>
+        <p>Scatti professionali in pista e off. Fotografie che raccontano la storia, non semplici foto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEB & SOCIAL -->
+<section class="service-section">
+  <div class="service-inner">
+    <h2 class="service-title">Fai crescere la tua presenza online.<br><em>Mentre sei in pista</em></h2>
+    <p class="service-intro">Il sito è il quartier generale. I social sono dove gli sponsor ti cercano. Integriamo tutto: website, Instagram, TikTok, YouTube. Una sola voce, tre canali, engagement costante.</p>
+    <div class="service-center">
+      <i class="fas fa-globe service-icon"></i>
+    </div>
+    <div class="service-points">
+      <div class="point">
+        <div class="point-num">01</div>
+        <h4>Sito Vetrina Professionale</h4>
+        <p>Homepage che convince, media kit integrato, results live. Uno strumento di acquisizione, non un blog.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">02</div>
+        <h4>Calendario Editoriale</h4>
+        <p>Post pianificati: dal circuit, alla gara, ai risultati. Frequenza e coerenza che mantiene engagement alto.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">03</div>
+        <h4>Community Management</h4>
+        <p>Risposte frequenti, interazione autentica, community building. Non è spam: è relazione.</p>
+      </div>
+      <div class="point">
+        <div class="point-num">04</div>
+        <h4>Metriche Dashboard</h4>
+        <p>Analytics real-time: followers, engagement, reach. Lo sponsor vede esattamente il valore che riceve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="f-brand">
+      <div class="f-brand-logo">
+        <img src="images/logo-switchup.png" alt="SWITCH UP">
+      </div>
+      <p>Siti professionali per tutti gli sport che attirano sponsor. Costruiti da atleti, per gli atleti.</p>
+    </div>
+    <div class="f-col">
+      <h4>Navigazione</h4>
+      <a href="index.html#why">Perché Noi</a>
+      <a href="index.html#projects">Progetti</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="index.html#service">Pacchetti</a>
+    </div>
+    <div class="f-col">
+      <h4>Partner</h4>
+      <a href="https://www.adattivia.it" target="_blank" rel="noopener">Adattivia</a>
+      <a href="https://ab39.it" target="_blank" rel="noopener">Andrea Bettin · 39</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="f-copy">© 2026 SWITCH UP. Your sport. Your brand. Your next level.</span>
+    <span class="f-copy">Powered by <a href="https://www.adattivia.it" target="_blank" rel="noopener" style="color:var(--p)">Adattivia</a></span>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>80),{passive:true});
+</script>
+</body>
+</html>
