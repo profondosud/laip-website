@@ -119,41 +119,27 @@ nav.s .nav-logo img{height:40px}
   padding-left:1.5rem;
 }
 
-.service-center{
-  display:flex;align-items:center;justify-content:center;
-  margin:4rem 0;
-}
-.service-icon{
-  font-size:5rem;color:var(--p);
-  opacity:.85;
-}
-
-.service-points{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;
-  margin-top:4rem;
-}
-.point{
-  text-align:center;
-}
-.point-num{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:4rem;font-weight:900;
-  color:rgba(173,222,0,.15);
-  line-height:1;margin-bottom:1rem;
-}
-.point h4{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:1.1rem;font-weight:800;
-  text-transform:uppercase;
-  color:var(--snow);
-  margin-bottom:.8rem;
-  line-height:1.2;
-}
-.point p{
-  font-size:.9rem;color:var(--dim2);
-  line-height:1.6;
-}
-
+.service-center{display:flex;align-items:center;justify-content:center;margin:4rem 0;position:relative;isolation:isolate}
+.service-center::before{content:'';position:absolute;width:8.5rem;height:8.5rem;border-radius:50%;background:radial-gradient(circle,rgba(173,222,0,.2),rgba(173,222,0,.07) 42%,transparent 72%);box-shadow:0 0 56px rgba(173,222,0,.12);z-index:-1;pointer-events:none;transition:transform .35s,opacity .35s}
+.service-icon{display:grid;place-items:center;position:relative;width:6.5rem;height:6.5rem;border:1px solid rgba(173,222,0,.45);border-radius:1.8rem;background:linear-gradient(145deg,rgba(173,222,0,.2),rgba(173,222,0,.025) 62%);color:var(--p);font-size:3rem;filter:drop-shadow(0 0 18px rgba(173,222,0,.42));transform:rotate(-5deg);transition:transform .35s,filter .35s,background .35s}
+.service-icon::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.14),transparent 45%);pointer-events:none;z-index:-1}
+.service-icon::after{content:'';position:absolute;inset:-.55rem;border:1px solid rgba(173,222,0,.18);border-radius:2rem;transform:rotate(9deg);pointer-events:none;z-index:-1;transition:transform .35s,border-color .35s}
+.service-center:hover::before{transform:scale(1.1)}
+.service-center:hover .service-icon{transform:rotate(0) scale(1.08);filter:drop-shadow(0 0 26px rgba(173,222,0,.65));background:linear-gradient(145deg,rgba(173,222,0,.3),rgba(173,222,0,.06) 68%)}
+.service-center:hover .service-icon::after{transform:rotate(0);border-color:rgba(173,222,0,.42)}
+.service-points{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:4rem}
+.point{text-align:center;position:relative;padding:.2rem .25rem .5rem}
+.point-icon{width:4.25rem;height:4.25rem;margin:0 auto 1.25rem;display:grid;place-items:center;position:relative;isolation:isolate;border:1px solid rgba(173,222,0,.42);border-radius:1.25rem;color:var(--p);font-size:1.65rem;background:linear-gradient(145deg,rgba(173,222,0,.19),rgba(173,222,0,.025) 72%);box-shadow:inset 0 1px rgba(255,255,255,.12),0 8px 26px rgba(0,0,0,.22),0 0 24px rgba(173,222,0,.09);transition:transform .3s,border-color .3s,box-shadow .3s}
+.point-icon::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.11),transparent 46%);pointer-events:none}
+.point-icon::after{content:'';position:absolute;inset:-5px;border:1px solid rgba(173,222,0,.12);border-radius:1.5rem;transform:rotate(7deg);pointer-events:none;transition:transform .3s,border-color .3s}
+.point-icon i{position:relative;z-index:1;filter:drop-shadow(0 0 8px rgba(173,222,0,.4))}
+.point:hover .point-icon{transform:translateY(-4px) scale(1.05);border-color:var(--p);color:#fff;box-shadow:inset 0 1px rgba(255,255,255,.16),0 10px 30px rgba(0,0,0,.28),0 0 30px rgba(173,222,0,.2)}
+.point:hover .point-icon::after{transform:rotate(0);border-color:rgba(173,222,0,.3)}
+.point h4{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800;text-transform:uppercase;color:var(--snow);margin-bottom:.8rem;line-height:1.2;transition:color .25s}
+.point:hover h4{color:#C5FF18}
+.point p{font-size:.9rem;color:var(--dim2);line-height:1.6}
+@media(prefers-reduced-motion:reduce){.service-icon,.service-center::before,.service-icon::after,.point-icon,.point-icon::after{transition:none}}
+@media(max-width:560px){.service-center{margin:3rem 0}.service-icon{width:5.5rem;height:5.5rem;font-size:2.5rem}.point-icon{width:3.75rem;height:3.75rem;font-size:1.45rem}}
 /* FOOTER */
 footer{
   padding:5rem 2.5rem 3rem;
@@ -216,22 +202,22 @@ footer{
     </div>
     <div class="service-points">
       <div class="point">
-        <div class="point-num">01</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-id-card"></i></div>
         <h4>Press Kit Professionale</h4>
         <p>Dossier completo con foto, cv, statistiche. Pronto da mandare a media e sponsor.</p>
       </div>
       <div class="point">
-        <div class="point-num">02</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-bullhorn"></i></div>
         <h4>Comunicati Stampa</h4>
         <p>Annunci coordinati di vittorie, stage, partnership. Visibilità costante sui media.</p>
       </div>
       <div class="point">
-        <div class="point-num">03</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-microphone-lines"></i></div>
         <h4>Relazioni Media</h4>
         <p>Contatti con giornalisti motorsport. Porte aperte con media e testate online.</p>
       </div>
       <div class="point">
-        <div class="point-num">04</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-user-tie"></i></div>
         <h4>Personal Brand</h4>
         <p>Strategia di posizionamento. Diventi personaggio, non solo pilota.</p>
       </div>
@@ -249,22 +235,22 @@ footer{
     </div>
     <div class="service-points">
       <div class="point">
-        <div class="point-num">01</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-person-chalkboard"></i></div>
         <h4>Presentazioni Customizzate</h4>
         <p>Deck professionale ad hoc per ogni sponsor. Numeri, dati, visione. Strutturata per convincere esattamente lui.</p>
       </div>
       <div class="point">
-        <div class="point-num">02</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-book-open"></i></div>
         <h4>Brochure & Media Kit</h4>
         <p>Materiali fisici e digitali: brochure, one-pager, media kit integrato. Strumenti che lasciano impressione.</p>
       </div>
       <div class="point">
-        <div class="point-num">03</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
         <h4>Proposal Personalizzate</h4>
         <p>Proposte di sponsorship studiate sulle esigenze specifiche. Non template: ogni proposta è custom.</p>
       </div>
       <div class="point">
-        <div class="point-num">04</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-chart-pie"></i></div>
         <h4>Materiali di Supporto</h4>
         <p>Follow-up design: infografiche, case studies, report. Tutto ciò che serve dopo la firma per mantenerlo felice.</p>
       </div>
@@ -287,22 +273,22 @@ footer{
     </div>
     <div class="service-points">
       <div class="point">
-        <div class="point-num">01</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-fingerprint"></i></div>
         <h4>Brand Identity</h4>
         <p>Logo, colori, font, guida stilistica. Coerente su sito, social, merchandise.</p>
       </div>
       <div class="point">
-        <div class="point-num">02</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-pen-nib"></i></div>
         <h4>Design Grafico</h4>
         <p>Poster, social card, infografiche, sponsor kit. Visuale professionista, non amatrice.</p>
       </div>
       <div class="point">
-        <div class="point-num">03</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-film"></i></div>
         <h4>Video Motion</h4>
         <p>Clip, intro, highlights. Contenuto motion per social che cattura attenzione in 3 secondi.</p>
       </div>
       <div class="point">
-        <div class="point-num">04</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-camera"></i></div>
         <h4>Photography Direction</h4>
         <p>Scatti professionali in pista e off. Fotografie che raccontano la storia, non semplici foto.</p>
       </div>
@@ -320,22 +306,22 @@ footer{
     </div>
     <div class="service-points">
       <div class="point">
-        <div class="point-num">01</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-laptop"></i></div>
         <h4>Sito Vetrina Professionale</h4>
         <p>Homepage che convince, media kit integrato, results live. Uno strumento di acquisizione, non un blog.</p>
       </div>
       <div class="point">
-        <div class="point-num">02</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-calendar-days"></i></div>
         <h4>Calendario Editoriale</h4>
         <p>Post pianificati: dal circuit, alla gara, ai risultati. Frequenza e coerenza che mantiene engagement alto.</p>
       </div>
       <div class="point">
-        <div class="point-num">03</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-comments"></i></div>
         <h4>Community Management</h4>
         <p>Risposte frequenti, interazione autentica, community building. Non è spam: è relazione.</p>
       </div>
       <div class="point">
-        <div class="point-num">04</div>
+        <div class="point-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
         <h4>Metriche Dashboard</h4>
         <p>Analytics real-time: followers, engagement, reach. Lo sponsor vede esattamente il valore che riceve.</p>
       </div>
