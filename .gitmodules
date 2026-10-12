@@ -1,0 +1,3 @@
+[submodule "laip-website"]
+	path = laip-website
+	url = https://github.com/profondosud/laip-website.git
