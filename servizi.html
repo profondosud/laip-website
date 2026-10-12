@@ -140,6 +140,22 @@ nav.s .nav-logo img{height:40px}
 .point p{font-size:.9rem;color:var(--dim2);line-height:1.6}
 @media(prefers-reduced-motion:reduce){.service-icon,.service-center::before,.service-icon::after,.point-icon,.point-icon::after{transition:none}}
 @media(max-width:560px){.service-center{margin:3rem 0}.service-icon{width:5.5rem;height:5.5rem;font-size:2.5rem}.point-icon{width:3.75rem;height:3.75rem;font-size:1.45rem}}
+.visual-case-study{margin:4rem 0;padding:clamp(1.25rem,3vw,3rem);background:linear-gradient(135deg,rgba(173,222,0,.055),rgba(173,222,0,.015));border-left:3px solid var(--p);border-radius:0 1rem 1rem 0}
+.visual-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.4vw,2rem);align-items:start}
+.visual-example{min-width:0;margin:0;overflow:hidden;border:1px solid rgba(255,255,255,.09);border-radius:.8rem;background:rgba(6,6,10,.72);box-shadow:0 18px 44px rgba(0,0,0,.26);transition:transform .3s,border-color .3s,box-shadow .3s}
+.visual-example:hover{transform:translateY(-4px);border-color:rgba(173,222,0,.35);box-shadow:0 24px 52px rgba(0,0,0,.34),0 0 26px rgba(173,222,0,.08)}
+.visual-example-after{border-color:rgba(173,222,0,.3)}
+.visual-example-label{display:flex;align-items:center;gap:.7rem;min-height:3.5rem;padding:.85rem 1rem;color:var(--dim2);font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.visual-example-after .visual-example-label{color:#C5FF18}
+.visual-example-index{display:grid;place-items:center;flex:0 0 1.75rem;width:1.75rem;height:1.75rem;border:1px solid rgba(173,222,0,.4);border-radius:50%;color:var(--p);font-size:.75rem;letter-spacing:0}
+.visual-example-after .visual-example-index{background:var(--p);color:var(--ink)}
+.visual-example-image{display:block;width:100%;height:clamp(32rem,42vw,42rem);object-fit:contain;object-position:center;background:radial-gradient(ellipse at 50% 42%,rgba(173,222,0,.07),transparent 65%),#050508}
+.visual-case-copy{max-width:850px;margin:2rem auto 0}
+.visual-case-lead{font-size:1.05rem;color:var(--snow);line-height:1.8;font-weight:600;margin-bottom:1rem}
+.visual-case-copy p:last-child{font-size:.95rem;color:var(--dim2);line-height:1.8}
+@media(max-width:760px){.visual-comparison{grid-template-columns:1fr}.visual-example-image{height:clamp(28rem,88vw,40rem)}}
+@media(max-width:560px){.visual-case-study{margin:3rem 0;padding:1rem}.visual-example-image{height:min(36rem,155vw);min-height:24rem}.visual-example-label{min-height:3.1rem;padding:.7rem .8rem;font-size:.92rem}}
+@media(prefers-reduced-motion:reduce){.visual-example{transition:none}
 /* FOOTER */
 footer{
   padding:5rem 2.5rem 3rem;
@@ -266,10 +282,21 @@ footer{
     <div class="service-center">
       <i class="fas fa-palette service-icon"></i>
     </div>
-    <div style="margin:4rem 0;padding:3rem;background:rgba(173,222,0,.04);border-left:3px solid var(--p)">
-      <img src="images/visual-before.png" alt="Esempio di comunicazione visiva non professionale" style="max-width:100%;height:auto;margin-bottom:2rem">
-      <p style="font-size:1.05rem;color:var(--snow);line-height:1.8;max-width:700px;margin:0 auto;font-weight:600;margin-bottom:1rem"><strong>Togliere uno sfondo non è comunicazione visiva.</strong></p>
-      <p style="font-size:.95rem;color:var(--dim2);line-height:1.8;max-width:700px;margin:0 auto">Lo sponsor paga per credibilità e serietà. Una foto ritagliata male o senza contesto comunica amatorialità. La vera comunicazione visiva è strategia integrata: colori coerenti, composizione deliberata, gerarchia visiva, atmosfera controllata, editing professionale. Ogni elemento lavora per un unico scopo: posizionare te e il tuo team come professionisti seri a cui vale la pena di associarsi.</p>
+    <div class="visual-case-study">
+      <div class="visual-comparison" role="group" aria-label="Confronto tra comunicazione visiva non professionale e strategia efficace">
+        <figure class="visual-example visual-example-before">
+          <figcaption class="visual-example-label"><span class="visual-example-index">01</span><span>Comunicazione da migliorare</span></figcaption>
+          <img class="visual-example-image" src="images/visual-before.png" alt="Post social in un telefono con timbro rosso NON VA BENE">
+        </figure>
+        <figure class="visual-example visual-example-after">
+          <figcaption class="visual-example-label"><span class="visual-example-index">02</span><span>Strategia efficace</span></figcaption>
+          <img class="visual-example-image" src="images/strategy-effective-instagram.png" alt="Post Instagram di Diogo Moreira con timbro verde STRATEGIA EFFICACE">
+        </figure>
+      </div>
+      <div class="visual-case-copy">
+        <p class="visual-case-lead"><strong>Togliere uno sfondo non è comunicazione visiva.</strong></p>
+        <p>Lo sponsor paga per credibilità e serietà. Una foto ritagliata male o senza contesto comunica amatorialità. La vera comunicazione visiva è strategia integrata: colori coerenti, composizione deliberata, gerarchia visiva, atmosfera controllata, editing professionale. Ogni elemento lavora per un unico scopo: posizionare te e il tuo team come professionisti seri a cui vale la pena di associarsi.</p>
+      </div>
     </div>
     <div class="service-points">
       <div class="point">
