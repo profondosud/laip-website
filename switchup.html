@@ -7,6 +7,7 @@
     <meta name="description" content="Siti web professionali per team, piloti e scuole di guida. Attira sponsor con una piattaforma che parla il linguaggio del business.">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -498,6 +499,192 @@
                 transform: scale(1);
             }
         }
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hero hide on scroll */
+        .hero.hidden {
+            display: none;
+        }
+
+        /* Contact Modal */
+        .contact-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.35s;
+            background: rgba(0, 0, 0, 0);
+        }
+
+        .contact-modal.open {
+            pointer-events: auto;
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-modal.open .contact-modal-content {
+            transform: translateY(0);
+        }
+
+        .contact-modal-content {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px 12px 0 0;
+            padding: 2rem;
+            width: 360px;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.5);
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 10000;
+        }
+
+        .contact-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: #d1d5db;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.2s;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-close:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 0.7rem 0.9rem;
+            color: white;
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: border-color 0.25s, background 0.25s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(204, 255, 0, 0.06);
+        }
+
+        .form-group.checkbox {
+            flex-direction: row;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 0.3rem;
+        }
+
+        .form-group.checkbox input {
+            margin: 0;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .form-group.checkbox label {
+            font-size: 0.85rem;
+            color: #d1d5db;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .form-group.checkbox label a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .btn-send {
+            padding: 0.8rem 1.4rem;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 4px 16px rgba(204, 255, 0, 0.2);
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-send:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(204, 255, 0, 0.35);
+        }
+
+        .btn-send:active {
+            transform: translateY(0);
+        }
+
+        .form-status {
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 0.6rem;
+            min-height: 20px;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .form-status.success {
+            color: #4ade80;
+        }
+
+        .form-status.error {
+            color: #f87171;
+        }
+
+        @media (max-width: 480px) {
+            .contact-modal-content {
+                width: 100%;
+                max-width: 100%;
+                border-radius: 16px 16px 0 0;
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -699,6 +886,34 @@
         </div>
     </section>
 
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="contact-modal">
+        <div class="contact-modal-content">
+            <button class="contact-close" aria-label="Chiudi">&times;</button>
+            <h3 style="font-family:'Poppins',sans-serif;font-size:1.4rem;font-weight:700;text-transform:uppercase;margin-bottom:1rem;color:white">Parliamone</h3>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="sport" name="sport" placeholder="Sport / Disciplina">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Messaggio" rows="4"></textarea>
+                </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">Ho letto e accetto la <a href="#">privacy policy</a></label>
+                </div>
+                <button type="submit" class="btn-send"><i class="fas fa-paper-plane"></i> Invia</button>
+                <div id="form-status" class="form-status"></div>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p><strong>SWITCH UP</strong> - Siti Professionali per il Motorsport</p>
@@ -710,5 +925,120 @@
         </div>
         <p style="margin-top: 2rem; font-size: 0.8rem;">© 2026 SWITCH UP. Costruito con metodo e visione.</p>
     </footer>
+
+    <script>
+        // Smooth scroll e gestione intro
+        const hero = document.querySelector('.hero');
+        let heroHidden = false;
+
+        // Nascondi hero al primo scroll
+        window.addEventListener('scroll', () => {
+            if (!heroHidden && window.scrollY > 100) {
+                hero.classList.add('hidden');
+                heroHidden = true;
+            }
+        }, { once: true });
+
+        // Smooth scroll ai click dei nav link
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Logo torna in home al click
+        document.querySelector('.logo').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            hero.classList.remove('hidden');
+            heroHidden = false;
+        });
+
+        // Contact Modal
+        const modal = document.getElementById('contact-modal');
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const closeBtn = document.querySelector('.contact-close');
+
+        // EmailJS initialization
+        // SETUP: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+        emailjs.init('YOUR_PUBLIC_KEY');
+
+        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+        function openModal() {
+            modal.classList.add('open');
+            contactForm.reset();
+            formStatus.textContent = '';
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+            formStatus.textContent = '';
+        }
+
+        // Open modal on CTA buttons
+        document.querySelector('.cta-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+
+        document.querySelectorAll('.cta-button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Form submission
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const sport = document.getElementById('sport').value;
+            const message = document.getElementById('message').value;
+            const privacy = document.getElementById('privacy').checked;
+
+            if (!privacy) {
+                formStatus.textContent = 'Accetta la privacy policy';
+                formStatus.classList.add('error');
+                return;
+            }
+
+            formStatus.textContent = 'Invio in corso...';
+            formStatus.classList.remove('success', 'error');
+
+            try {
+                const response = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                    name: name,
+                    email: email,
+                    sport: sport,
+                    message: message,
+                    reply_to: email
+                });
+
+                if (response.status === 200) {
+                    formStatus.textContent = '✓ Messaggio inviato! Ti contatteremo presto.';
+                    formStatus.classList.add('success');
+                    contactForm.reset();
+                    setTimeout(closeModal, 2500);
+                }
+            } catch (err) {
+                console.error('EmailJS error:', err);
+                formStatus.textContent = '✗ Errore nell\'invio. Riprova.';
+                formStatus.classList.add('error');
+            }
+        });
+    </script>
 </body>
 </html>
